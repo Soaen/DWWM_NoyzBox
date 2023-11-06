@@ -8,7 +8,13 @@ import Header from '../components/Header.vue'
     <Header/>    
 
     <div>
-        <p>Register</p>
+        
+        <form method="post" @submit.prevent="addDatas">
+
+            
+
+        </form>
+
     </div>
-    
+
 </template>
