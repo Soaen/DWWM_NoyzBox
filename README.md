@@ -79,6 +79,8 @@ Nous avons été missionnés afin de faire un site web de différents sons.
 * [![HTML5][html.com]][html-url]
 * [![CSS3][css.com]][css-url]
 * [![SASS][sass.com]][sass-url]
+* [![Vue.JS][vue.com]][vue-url]
+* [![Node.JS][node.com]][node-url]
 
 ### Installation
 
@@ -150,9 +152,13 @@ Lien du projet: [https://github.com/Soaen/DWWM_NoiseBox](https://github.com/DWWM
 [issues-shield]: https://img.shields.io/github/issues/Soaen/DWWM_NoyzBox?style=for-the-badge
 [issues-url]: https://github.com/Soaen/DWWM_NoyzBox/issues
 [product-screenshot]: images/screenshot.png
-[html.com]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[html.com]: https://img.shields.io/badge/-HTML-f06529?style=flat&logo=html5&logoColor=fff
 [html-url]: https://html.com/
-[css.com]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[css.com]: https://img.shields.io/badge/-CSS-264de4?style=flat&logo=css3&logoColor=fff
 [css-url]: https://www.w3.org/Style/CSS/
-[sass.com]: https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white
+[sass.com]: https://img.shields.io/badge/-SASS-cd6799?style=flat&logo=SASS&logoColor=fff
 [sass-url]: https://sass-lang.com/
+[vue.com]: https://img.shields.io/badge/-Vue.js-4fc08d?style=flat&logo=Vue.js&logoColor=fff
+[vue-url]: https://vuejs.org/
+[node.com]: https://img.shields.io/badge/-Node.js-68a063?style=flat&logo=Node.js&logoColor=fff
+[node-url]: https://sass-lang.com/
