@@ -37,14 +37,14 @@
   <p align="center">
     Découvrez les meilleurs sons
     <br />
-    <a href="https://github.com/Soaen/DevInte-Tailleur"><strong>Explorer la documentation »</strong></a>
+    <a href="https://github.com/Soaen/DWWM_NoyzBox"><strong>Explorer la documentation »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Soaen/DevInte-Tailleur">Voir une Démo</a>
+    <a href="https://github.com/Soaen/DWWM_NoyzBox">Voir une Démo</a>
     ·
-    <a href="https://github.com/Soaen/DevInte-Tailleur/issues">Report Bug</a>
+    <a href="https://github.com/Soaen/DWWM_NoyzBox/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Soaen/DevInte-Tailleur/issues">Request Feature</a>
+    <a href="https://github.com/Soaen/DWWM_NoyzBox/issues">Request Feature</a>
   </p>
 </div>
 
