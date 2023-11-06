@@ -35,7 +35,7 @@
 <h3 align="center">NoyzBox</h3>
 
   <p align="center">
-    Découvrez les meilleurs sons
+    Découvrez les meilleurs bruits
     <br />
     <a href="https://github.com/Soaen/DWWM_NoyzBox"><strong>Explorer la documentation »</strong></a>
     <br />
@@ -69,7 +69,7 @@
 <!-- ABOUT THE PROJECT -->
 ## A propos du projet
 
-Nous avons été missionnés afin de faire un site web de différents sons.
+Nous avons été missionnés afin de faire un site web de différents bruits.
 
 <p align="right">(<a href="#readme-top">Retourner en haut</a>)</p>
 
@@ -135,7 +135,7 @@ Marine B. - [Marine Bocquillon](https://github.com/??)
 Marine V. - [Marine Valentin](https://github.com/??)
 
 
-Lien du projet: [https://github.com/Soaen/DWWM_NoiseBox](https://github.com/DWWM_NoyzBox)
+Lien du projet: [https://github.com/Soaen/DWWM_NoyzBox](https://github.com/DWWM_NoyzBox)
 
 <p align="right">(<a href="#readme-top">Retourner en haut</a>)</p>
 

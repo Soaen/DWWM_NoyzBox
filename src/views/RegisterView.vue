@@ -1,12 +1,13 @@
 <script setup>
-
 import Header from '../components/Header.vue'
 
 </script>
 
 <template>
-  <Header/>
-  <div>
-    <p>HomeView</p>
-</div>
+
+    <Header/>    
+
+    <div>
+        <p>Register</p>
+    </div>
 </template>
