@@ -10,4 +10,5 @@ import Header from '../components/Header.vue'
     <div>
         <p>Register</p>
     </div>
+    
 </template>

@@ -4,9 +4,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+
     <header>
         <nav>
-            <img src="/logo.png" alt="" class="logo-navbar">
+            <RouterLink to="/">
+                <img src="/logo.png" alt="" class="logo-navbar">
+            </RouterLink>
             <div>
                 <RouterLink to="/">Accueil</RouterLink>
                 <RouterLink to="/noises">Nos sons</RouterLink>
@@ -22,32 +25,28 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped lang="scss">
 header{
-    
-        nav {
+    nav {
+        display: flex;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        width: 97%;
+        margin: 1%;
+        border: 2px white solid;
+        padding: 5px;
+        div{
+            width: 30%;
             display: flex;
-            height: 80px;
-            align-items: center;
-            justify-content: space-between;
-            width: 98%;
-            margin: 1%;
-            border: 2px white solid;
-            div{
-                width: 30%;
-                display: flex;
-                justify-content: space-around;
-                a{
-                    color: white;
-                    text-decoration: none;
-                    font-size: 16px;
-                }
-
+            justify-content: space-around;
+            a{
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
             }
-            
+        }            
         .logo-navbar{
             height: 80px;
-
         }
     }
-
 }
 </style>

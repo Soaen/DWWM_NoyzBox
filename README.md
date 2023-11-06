@@ -1,15 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -128,11 +117,11 @@ N'oubliez pas de donner une étoile au projet ! Merci encore !
 <!-- CONTACT -->
 ## Contact
 
-Sylvain - [Sylvain Vansteenkiste](https://github.com/Soaen)
+Sylvain V. - [GitHub](https://github.com/Soaen)
 
-Marine B. - [Marine Bocquillon](https://github.com/??)
+Marine B. - [GitHub](https://github.com/??)
 
-Marine V. - [Marine Valentin](https://github.com/??)
+Marine V. - [GitHub](https://github.com/??)
 
 
 Lien du projet: [https://github.com/Soaen/DWWM_NoyzBox](https://github.com/DWWM_NoyzBox)
