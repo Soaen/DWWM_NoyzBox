@@ -25,14 +25,16 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped lang="scss">
 header{
+    height: 100%;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 100%);
+
+
     nav {
         display: flex;
         height: 80px;
         align-items: center;
         justify-content: space-between;
         width: 97%;
-        margin: 1%;
-        border: 2px white solid;
         padding: 5px;
         div{
             width: 30%;

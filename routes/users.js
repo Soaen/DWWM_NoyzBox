@@ -8,4 +8,8 @@ module.exports = server => {
     server.get("/users", (req, res) => {
         UsersController.getAll(req, res);
     })
+
+    server.post("/users", (req, res) =>{
+        UsersController.create(req,res);
+    })
 }
