@@ -7,6 +7,7 @@ const UsersSchema = new Schema({
     nom: String,
     pseudo: String,
     password: String,
+    saltHash: Number,
     email: String,
     role: String,
     favoris: String,

@@ -6,8 +6,9 @@ module.exports = server => {
         UsersController.getAll(req, res);
     })
 
-    server.get("/users/:id", (req,res) => {
-        UsersController.get(req, res);
+
+    server.get("/users/:pseudo", (req,res) => {
+        UsersController.getByName(req, res);
     })
 
     server.post("/users", (req, res) =>{
