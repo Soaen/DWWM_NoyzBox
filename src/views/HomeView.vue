@@ -6,7 +6,31 @@ import Header from '../components/Header.vue'
 
 <template>
   <Header/>
-  <div>
-    <p>HomeView</p>
-</div>
+
+<main>
+
+    <p> Page d'accueil </p>
+    <p> Nos sons coups de coeurs </p>
+    <RouterLink to="/noises"> Accéder à nos sons  </RouterLink> 
+    <RouterLink to ="/about"> Notre histoire </RouterLink>
+
+
+      
+
+
+   
+
+  
+
+
+</main>
+  
+
+
+
+
 </template>
+
+<style scoped lang="scss"> 
+
+</style>
