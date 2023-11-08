@@ -92,49 +92,91 @@ let addDatas = async ()=>{
 
     <div>
 
+        <h1>Rejoins nous !</h1>
+
         <p v-show="isSend && isSend != ''">{{ isSend ? "Données envoyée avec succès" : "Problème" }}</p>
         
-        <form method="POST" @submit.prevent="addDatas">
+        <form method="POST" @submit.prevent="addDatas" class="form-register">
 
-            <div>
-                <label for="surname">Nom:</label>
-                <input type="text" name="surname" id="surname" v-model="userNom">
-                <p v-if="!userNomValid">Le nom est obligatoire !</p>
+            <div class="form-container">
+
+                <div>
+                    <label for="surname">Nom:</label>
+                    <div>
+                        <input type="text" name="surname" id="surname" v-model="userNom" class="form-input">
+                        <p v-if="!userNomValid">Le nom est obligatoire !</p>
+                    </div>
+
+                </div>
+
+                <div>
+                    <label for="name">Prénom:</label>
+
+                    <div>
+                        <input type="text" name="name" id="name" v-model="userPrenom" class="form-input">
+                        <p v-if="!userPrenomValid">Le Prénom est obligatoire !</p>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div>
-                <label for="name">Prénom:</label>
-                <input type="text" name="name" id="name" v-model="userPrenom">
-                <p v-if="!userPrenomValid">Le Prénom est obligatoire !</p>
-            </div>
+            
+            <div class="form-container">
 
-            <div>
-                <label for="pseudo">Pseudonyme :</label>
-                <input type="text" name="pseudo" id="pseudo" v-model="userPseudo">
-                <p v-if="!userPseudoValid">Le Pseudonyme dois contenir au minimum 5 lettres !</p>
+                <div>
 
-            </div>
+                    <label for="pseudo">Pseudonyme :</label>
 
-            <div>
-                <label for="password">Mot de passe :</label>
-                <input type="password" name="password" id="password" v-model="userPassword">
-                <p v-if="!userPasswordValid">Le mot de passe dois contenir au minimum 8 caractères !</p>
+                    <div>
+                        <input type="text" name="pseudo" id="pseudo" v-model="userPseudo" class="form-input">
+                        <p v-if="!userPseudoValid">Le Pseudonyme dois contenir au minimum 5 lettres !</p>
+                    </div>
+
+                </div>
+
+                <div>
+
+
+                    <label for="email">Entrez votre email</label>
+                    
+                    <div>
+                        <input type="email" name="email" id="email" v-model="userEmail" class="form-input">
+                        <p v-if="!userEmailValid">Les mots de passent doivent être égaux !</p>
+                    </div>
+
                 
+                </div>
+
             </div>
             
-            <div>
-                <label for="retypepassword">Confirmez votre mot de passe :</label>
-                <input type="password" name="retypepassword" id="retypepassword" v-model="userConfirmPassword">
-                <p v-if="!userConfirmPasswordValid">Les mots de passent doivent être égaux !</p>
+            
+            <div class="form-container">
+
+                <div>
+                    
+                    <label for="retypepassword">Confirmez votre mot de passe :</label>
+
+                    <div>
+                        <input type="password" name="retypepassword" id="retypepassword" v-model="userConfirmPassword" class="form-input">
+                        <p v-if="!userConfirmPasswordValid">Les mots de passent doivent être égaux !</p>
+                    </div>
+                    
+                </div>
+
+                <div>
+
+                    <label for="password">Mot de passe :</label>
+
+                    <div>
+                        <input type="password" name="password" id="password" v-model="userPassword" class="form-input">
+                        <p v-if="!userPasswordValid">Le mot de passe dois contenir au minimum 8 caractères !</p>
+                    </div> 
+
+                </div>
 
             </div>
-
-            <div>
-                <label for="email">Entrez votre email</label>
-                <input type="email" name="email" id="email" v-model="userEmail">
-                <p v-if="!userEmailValid">Les mots de passent doivent être égaux !</p>
-
-            </div>
+            
 
             <input type="submit" value="S'inscrire">
 
@@ -148,5 +190,24 @@ let addDatas = async ()=>{
 <style scoped lang="scss">
 form{
     color: white;
+}
+h1{
+    text-align: center;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    .form-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .form-input{
+            
+        }
+    }
 }
 </style>
