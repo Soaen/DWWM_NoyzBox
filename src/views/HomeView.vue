@@ -1,6 +1,7 @@
 <script setup>
-
+import {ref} from "vue"
 import Header from '../components/Header.vue'
+let rechercheEntree = ref() 
 
 </script>
 
@@ -15,8 +16,13 @@ import Header from '../components/Header.vue'
 <div class="h2">   
     <h2>Hit bruitage only </h2>  
 </div>
+<div class="barreSearch">
 
-
+  <input type="text" id="search" name="search" placeholder="Recherche"
+  v-model="rechercheEntree">
+  <p> {{  }} </p>
+<button type="submit" > </button>
+</div>
 
 
       
