@@ -5,15 +5,11 @@ import router from '../router/index';
 import bcrypt from 'bcryptjs';
 
 let isSend = ref();
-let userPrenom = ref("");
-let userNom = ref("");
 let userPseudo = ref("");
 let userPassword = ref("");
 let userConfirmPassword = ref("");
 let userEmail = ref("");
 
-let userNomValid = ref(true);
-let userPrenomValid = ref(true);
 let userPseudoValid = ref(true);
 let userPasswordValid = ref(true);
 let userConfirmPasswordValid = ref(true);
@@ -27,16 +23,14 @@ let addDatas = async ()=>{
     const salt = await bcrypt.genSalt(cryptSalt);
     const hash = await bcrypt.hash(userPassword.value, salt);
 
+
     
-    if (userNom.value.length === 0 ||
-      userPrenom.value.length === 0 ||
+    if (
       userPseudo.value.length < 5 ||
       userPassword.value.length < 8 ||
       userConfirmPassword.value !== userPassword.value ||
       !emailRegex.test(userEmail.value)) {
     // Affichez les messages d'erreur appropriés
-    userNomValid.value = userNom.value.length > 0;
-    userPrenomValid.value = userPrenom.value.length > 0;
     userPseudoValid.value = userPseudo.value.length >= 5;
     userPasswordValid.value = userPassword.value.length >= 8;
     userConfirmPasswordValid.value = userConfirmPassword.value === userPassword.value;
@@ -46,8 +40,6 @@ let addDatas = async ()=>{
 
     try {
     const data = {
-        prenom: userPrenom.value,
-        nom: userNom.value,
         pseudo: userPseudo.value,
         password: hash,
         saltHash: cryptSalt,
