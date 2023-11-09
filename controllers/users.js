@@ -1,4 +1,5 @@
 const UsersModel = require("../models/users");
+var sanitize = require('mongo-sanitize');
 
 module.exports = {
     getAll(req, res){
@@ -17,13 +18,24 @@ module.exports = {
         })
     },
 
-    get(req, res){
-        const id = req.params.id;
-        console.log("Récupération de l'utilisateur avec l'id " , id);
+    getByName(req, res){
+        const pseudo = sanitize(req.params.pseudo);
+        
+        console.log("Récupération de l'utilisateur avec le pseudo " , pseudo);
 
-        UsersModel.findById(id).then(user => {
-            res.send(user)
-        })
+        UsersModel.findOne({ pseudo })
+            .then(user => {
+                if (!user) {
+                    return res.status(404).json({ error: 'Utilisateur non trouvé' });
+                }
+
+                // Renvoyez le mot de passe de l'utilisateur
+                res.json({ user });
+            })
+            .catch(err => {
+                console.error(err);
+                res.status(500).json({ error: 'Erreur lors de la recherche de l\'utilisateur' });
+            });
     },
 
     update(req, res) {

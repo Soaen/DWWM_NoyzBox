@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 body{
     margin: 0;
     padding: 0;
     background-image: url('images/background.png');
+    color: white;
 }
 
 a, p, h1, h2, h3{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Bangers', Verdana, Geneva, Tahoma, sans-serif;
 }
 html{
     margin: 0;
