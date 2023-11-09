@@ -1,6 +1,7 @@
 <script setup>
-
+import {ref} from "vue"
 import Header from '../components/Header.vue'
+let rechercheEntree = ref() 
 
 </script>
 
@@ -8,11 +9,20 @@ import Header from '../components/Header.vue'
   <Header/>
 
 <main>
+<div class="h1">
+    <h1> Le meilleur des bruitages </h1>
+</div>
 
-    <p> Page d'accueil </p>
-    <p> Nos sons coups de coeurs </p>
-    <RouterLink to="/noises"> Accéder à nos sons  </RouterLink> 
-    <RouterLink to ="/about"> Notre histoire </RouterLink>
+<div class="h2">   
+    <h2>Hit bruitage only </h2>  
+</div>
+<div class="barreSearch">
+
+  <input type="text" id="search" name="search" placeholder="Recherche"
+  v-model="rechercheEntree">
+  <p> {{  }} </p>
+<button type="submit" > </button>
+</div>
 
 
       
@@ -32,5 +42,37 @@ import Header from '../components/Header.vue'
 </template>
 
 <style scoped lang="scss"> 
+
+*{
+  margin: auto;
+  padding: auto;
+}
+.h1{
+  margin-top: 100px;
+  padding-left: 500px;
+  padding-right: 500px;
+  align-content: center;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 90px;
+  color: white;
+ 
+
+
+}
+.h2 {
+margin-top: 30px;
+  color: white;
+  display: flex;
+  align-content: center;
+}
+
+h2 {
+  font-size: 35px;
+}
+
 
 </style>
