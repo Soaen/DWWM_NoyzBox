@@ -12,7 +12,3 @@ import Header from '../components/Header.vue'
     <LoginItem/>
   </div>
 </template>
-
-<style>
-
-</style>

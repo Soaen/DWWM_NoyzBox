@@ -98,38 +98,14 @@ let addDatas = async ()=>{
         
         <form method="POST" @submit.prevent="addDatas" class="form-register">
 
-            <div class="form-container">
-
-                <div>
-                    <label for="surname">Nom:</label>
-                    <div>
-                        <input type="text" name="surname" id="surname" v-model="userNom" class="form-input">
-                        <p v-if="!userNomValid">Le nom est obligatoire !</p>
-                    </div>
-
-                </div>
-
-                <div>
-                    <label for="name">Prénom:</label>
-
-                    <div>
-                        <input type="text" name="name" id="name" v-model="userPrenom" class="form-input">
-                        <p v-if="!userPrenomValid">Le Prénom est obligatoire !</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            
-            <div class="form-container">
+            <div class="form-container form-first">
 
                 <div>
 
                     <label for="pseudo">Pseudonyme :</label>
 
                     <div>
-                        <input type="text" name="pseudo" id="pseudo" v-model="userPseudo" class="form-input">
+                        <input type="text" name="pseudo" id="pseudo" v-model="userPseudo" class="form-input" placeholder="Pseudonyme">
                         <p v-if="!userPseudoValid">Le Pseudonyme dois contenir au minimum 5 lettres !</p>
                     </div>
 
@@ -138,10 +114,10 @@ let addDatas = async ()=>{
                 <div>
 
 
-                    <label for="email">Entrez votre email</label>
+                    <label for="email">Votre email :</label>
                     
                     <div>
-                        <input type="email" name="email" id="email" v-model="userEmail" class="form-input">
+                        <input type="email" name="email" id="email" v-model="userEmail" class="form-input" placeholder="Email">
                         <p v-if="!userEmailValid">Les mots de passent doivent être égaux !</p>
                     </div>
 
@@ -151,34 +127,36 @@ let addDatas = async ()=>{
             </div>
             
             
-            <div class="form-container">
-
-                <div>
-                    
-                    <label for="retypepassword">Confirmez votre mot de passe :</label>
-
-                    <div>
-                        <input type="password" name="retypepassword" id="retypepassword" v-model="userConfirmPassword" class="form-input">
-                        <p v-if="!userConfirmPasswordValid">Les mots de passent doivent être égaux !</p>
-                    </div>
-                    
-                </div>
+            <div class="form-container last-form">
 
                 <div>
 
                     <label for="password">Mot de passe :</label>
 
                     <div>
-                        <input type="password" name="password" id="password" v-model="userPassword" class="form-input">
+                        <input type="password" name="password" id="password" v-model="userPassword" class="form-input" placeholder="Mot de passe">
                         <p v-if="!userPasswordValid">Le mot de passe dois contenir au minimum 8 caractères !</p>
                     </div> 
 
+                </div>  
+
+                <div>
+                    
+                    <label for="retypepassword">Confirmez votre mot de passe :</label>
+
+                    <div>
+                        <input type="password" name="retypepassword" id="retypepassword" v-model="userConfirmPassword" class="form-input" placeholder="Confirmez votre mot de passe">
+                        <p v-if="!userConfirmPasswordValid">Les mots de passent doivent être égaux !</p>
+                    </div>
+                    
                 </div>
+
+
 
             </div>
             
 
-            <input type="submit" value="S'inscrire">
+            <input type="submit" value="JE M'INSCRIS" class="submit-btn">
 
         </form>
 
@@ -200,13 +178,50 @@ h1{
     flex-direction: column;
     width: 80%;
     align-items: center;
+    margin: auto;
+    height: 100%;
     .form-container{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         .form-input{
-            
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            background-color: rgba($color: #000000, $alpha: 0.2);
+            height: 50px;
+            width: 360px;
+            padding-left: 20px;
+            border-radius: 15px;
+            color: white;
+            border: #4B4949 2px solid;
+        }
+        label{
+            display:inline-block;
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-bottom: 10px;
+        }
+
+    }
+    .last-form{
+        margin-top: 70px;
+    }
+    .form-first{
+        margin-top: 50px;
+    }
+    .submit-btn{
+        margin-top: 60px;
+        width: 260px;
+        height: 60px;
+        border-radius: 25px;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        color: white;
+        border: #4B4949 solid 2px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba($color: rgb(113, 182, 39), $alpha: 1);
+
         }
     }
 }

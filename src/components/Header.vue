@@ -45,7 +45,11 @@ header{
             a{
                 color: white;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: 20px;
+                
+                &:hover{
+                    opacity: 0.7;
+                }
 
             }
 
@@ -58,7 +62,7 @@ header{
         }
 
     }
-    
+     
 }
 
 </style>
