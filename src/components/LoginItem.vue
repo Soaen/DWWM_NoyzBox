@@ -50,11 +50,11 @@ let tryConnect = async () => {
         <form method="get" @submit.prevent="tryConnect">
             <div class="form-container">
                 <div class="form-input-container">
-                    <label for="pseudo">Pseudo:</label>  
+                    <label for="pseudo">Pseudonyme :</label>  
                     <input type="text" name="pseudo" id="pseudo" v-model="userPseudo" class="form-input" placeholder="Pseudonyme">
                 </div>
                 <div class="form-input-container">
-                    <label for="password">Mot de passe:</label>  
+                    <label for="password">Mot de passe :</label>  
                     <input type="password" name="password" id="password" v-model="userPassword" class="form-input" placeholder="Mot de passe">
                 </div>
             </div>
