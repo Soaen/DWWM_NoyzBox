@@ -28,9 +28,8 @@ let tryConnect = async () => {
             tempUser.value = userData.user;
             const passwordsMatch = await bcrypt.compare(userPassword.value, tempUser.value.password);
             if(passwordsMatch){
-                console.log("Bon");
                 store.setLoggedUser(tempUser.value);
-                router.push({ path: '/' });
+                router.push({ path: '/profil' });
             }else{
                 isLoginFailed.value = true;
             }

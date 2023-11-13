@@ -17,11 +17,19 @@ let rechercheEntree = ref()
     <h2>Hit bruitage only </h2>  
 </div>
 <div class="barreSearch">
-
-  <input type="text" id="search" name="search" placeholder="Recherche"
-  v-model="rechercheEntree">
+<form> 
+    <input type="text" id="search" name="search" placeholder="Recherche"
+    v-model="rechercheEntree">
   <p> {{  }} </p>
-<button type="submit" > </button>
+  
+</form>
+
+
+<button type="submit" > Rechercher
+
+
+
+ </button>
 </div>
 
 
@@ -53,14 +61,13 @@ let rechercheEntree = ref()
   padding-right: 500px;
   align-content: center;
   display: flex;
-  align-items: center;
+  
 }
 
 h1 {
   font-size: 90px;
   color: white;
- 
-
+  text-align: center;
 
 }
 .h2 {
@@ -72,7 +79,20 @@ margin-top: 30px;
 
 h2 {
   font-size: 35px;
+  text-align: center;
 }
 
+.barreSearch {
+ margin-top: 50px;
+ 
+}
 
+input {
+  display: flex;
+  align-content: center;
+  height: 50px;
+  width: 700px;
+  
+ 
+}
 </style>

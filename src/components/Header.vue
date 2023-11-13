@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+import { useUserStore } from '../stores/user';
+const store = useUserStore();
+
 </script>
 
 <template>
@@ -12,9 +15,11 @@ import { RouterLink, RouterView } from 'vue-router'
             </RouterLink>
             <div>
                 <RouterLink to="/">Accueil</RouterLink>
-                <RouterLink to="/noises">Nos sons</RouterLink>
+                <RouterLink to="/noises">Nos bruits</RouterLink>
                 <RouterLink to="/about">A propos</RouterLink>
-                <RouterLink to="/login">Se connecter</RouterLink>
+                <RouterLink to="/login" v-if="store.getLoggedUser.length == 0">Se connecter</RouterLink>
+                <RouterLink to="/profil" v-if="store.getLoggedUser.length > 0">Profil</RouterLink>
+                <RouterLink to="/profil" v-if="store.getLoggedUser.length > 0">Se déconnecter</RouterLink>
             </div>
         </nav>
     </header>
@@ -38,7 +43,7 @@ header{
         padding: 5px;
 
         div{
-            width: 30%;
+            width: 40%;
             display: flex;
             justify-content: space-around;
 
