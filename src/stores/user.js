@@ -14,6 +14,10 @@ export const useUserStore = defineStore('user', {
         destroyLoggedUser(){
             this.loggedUser = []
         },
+        resetToInitialState() {
+            const initialState = this.$state();
+            this.$reset(initialState);
+          },
     },
     
     getters: {

@@ -94,12 +94,12 @@ function formatDate(dateString) {
     flex-direction: row;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 5%;
     .details-container{
         display: flex;
         flex-direction: column;
         text-align: center;
         width: 30%;
+        margin-left: 5%;
         ul{
             list-style: none;
             margin: 0;
