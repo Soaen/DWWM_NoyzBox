@@ -1,8 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import {ref} from 'vue';
 
 import { useUserStore } from '../stores/user';
-const store = useUserStore();
+let store = useUserStore();
 
 </script>
 
@@ -19,7 +20,7 @@ const store = useUserStore();
                 <RouterLink to="/about">A propos</RouterLink>
                 <RouterLink to="/login" v-if="store.getLoggedUser.length == 0">Se connecter</RouterLink>
                 <RouterLink to="/profil" v-if="store.getLoggedUser.length > 0">Profil</RouterLink>
-                <RouterLink to="/profil" v-if="store.getLoggedUser.length > 0">Se déconnecter</RouterLink>
+                <RouterLink to="/logout" v-if="store.getLoggedUser.length > 0">Se déconnecter</RouterLink>
             </div>
         </nav>
     </header>
