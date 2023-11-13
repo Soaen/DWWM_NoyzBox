@@ -1,4 +1,3 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', {
@@ -10,10 +9,10 @@ export const useUserStore = defineStore('user', {
 
     actions: {
         setLoggedUser(user){
-            this.loggedUser = user
+            this.loggedUser = [user]
         },
         destroyLoggedUser(){
-            this.loggedUser = {}
+            this.loggedUser = []
         },
     },
     
@@ -21,5 +20,11 @@ export const useUserStore = defineStore('user', {
         getLoggedUser() {
           return this.loggedUser
         },
+        getLengthUser(){
+          return this.loggedUser.length
+        }
     },
+    persist: {
+        storage: sessionStorage, // data in sessionStorage is cleared when the page session ends.
+      },
 })
