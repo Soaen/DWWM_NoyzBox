@@ -119,9 +119,9 @@ N'oubliez pas de donner une étoile au projet ! Merci encore !
 
 Sylvain V. - [GitHub](https://github.com/Soaen)
 
-Marine B. - [GitHub](https://github.com/??)
+Marine B. - [GitHub](https://github.com/Marinebcq)
 
-Marine V. - [GitHub](https://github.com/??)
+Marine V. - [GitHub](https://github.com/LaMarinade)
 
 
 Lien du projet: [https://github.com/Soaen/DWWM_NoyzBox](https://github.com/DWWM_NoyzBox)
