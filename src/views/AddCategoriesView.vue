@@ -25,8 +25,8 @@ if(loggedUser == null || loggedUser.length === 0){
 let addCategories = async ()=>{
 
 
-    if (nameCategorie.value.length < 5) {
-        cateNameValid.value = nameCategorie.value.length >= 5
+    if (nameCategorie.value.length < 3) {
+        cateNameValid.value = nameCategorie.value.length >= 3
     return;
   }
 
@@ -51,11 +51,10 @@ let addCategories = async ()=>{
         isSend.value = false;
     }
 
-    router.push('/')
 
     setTimeout(() => {
       isSend.value = '';
-    }, 10000);
+    }, 5000);
     } catch (error) {
         console.error("Erreur lors de l'envoi de la requête", error);
     }
@@ -70,7 +69,7 @@ let addCategories = async ()=>{
 
     <div v-if="loggedUser != null && loggedUser.length != 0 && loggedUser.role == 'ADMIN'">
         <h1>Ajouter Catégories</h1>
-        <p v-show="isSend && isSend != ''">{{ isSend ? "Catégorie créer avec succès" : "Problème" }}</p>
+        <p v-show="isSend && isSend != ''" class="p-send">{{ isSend ? "Catégorie créée avec succès" : "Problème" }}</p>
         <form method="POST" @submit.prevent="addCategories" class="form-container">
 
             <div class="categorieadd-container">
@@ -87,6 +86,12 @@ let addCategories = async ()=>{
 
 
 <style lang="scss" scoped>
+
+.p-send{
+    text-align: center;
+    font-size: 20px;
+}
+
 h1{
     text-align: center;
 }
