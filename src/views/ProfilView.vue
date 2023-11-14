@@ -1,4 +1,5 @@
 <script setup>
+import Footer from "../components/Footer.vue";
 import Header from '../components/Header.vue'
 import router from '../router/index';
 import dayjs from 'dayjs'
@@ -62,7 +63,9 @@ function formatDate(dateString) {
     </div>
 
 
+    <Footer>
 
+</Footer>
 
 
 </template>
