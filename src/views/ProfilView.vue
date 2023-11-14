@@ -8,7 +8,7 @@ const store = useUserStore();
 
 const loggedUser = store.getLoggedUser[0];
 
-if (loggedUser.length === 0) {
+if (loggedUser == null || loggedUser.length === 0) {
   router.push('/');
 }
 
@@ -20,11 +20,14 @@ function formatDate(dateString) {
         }
 </script>
 
+
+
 <template>
 
     <Header/>
 
-    <div class="img-container">
+    <div class="img-container" v-if="loggedUser.length !== 0">
+        <h1>Bienvenue {{ loggedUser.pseudo }}</h1>
         <img src="../assets/images/default.jpg" alt="Photo de profil de l'utilisateur" class="img-profil">
         <p class="wip">Changer la photo de profil</p>
     </div>
@@ -32,8 +35,8 @@ function formatDate(dateString) {
 
     <div class="container">
 
+        <div class="details-container" v-if="loggedUser.length !== 0">
 
-        <div class="details-container">
             <h2>Mes informations</h2>
             <ul>
                 <li>Pseudonyme: {{ loggedUser.pseudo }}</li>
@@ -42,9 +45,11 @@ function formatDate(dateString) {
 
                 <li>Membre depuis le: {{ formatDate(loggedUser.created_at) }}</li>
             </ul>
+
         </div>
 
         <div class="details-container">
+
             <h2>Mes bruits favoris</h2>
             <ul v-if="loggedUser.favoris.length == 0">
                 <li>Vous n'avez aucun bruit favoris.</li>
@@ -53,10 +58,12 @@ function formatDate(dateString) {
         </div>
 
         <div class="details-container">
+
             <h2>Mes sons</h2>
             <ul>
                 <li>Vous n'avez proposé aucun bruit.</li>
             </ul>
+            
         </div>
 
     </div>
