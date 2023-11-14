@@ -18,18 +18,17 @@ let rechercheEntree = ref()
 </div>
 <div class="barreSearch">
 <form> 
-    <input type="text" id="search" name="search" placeholder="Recherche"
+    <input type="texte" id="search" name="search" placeholder="Search.."
     v-model="rechercheEntree">
-  <p> {{  }} </p>
+    
+    <button type="submit">
+      <img src="../assets/images/search-svgrepo-com.svg" alt="loupe">
+    </button>
   
+
 </form>
 
 
-<button type="submit" > Rechercher
-
-
-
- </button>
 </div>
 
 
@@ -83,16 +82,35 @@ h2 {
 }
 
 .barreSearch {
- margin-top: 50px;
+ margin-top: 70px;
  
 }
 
-input {
+input { 
   display: flex;
   align-content: center;
-  height: 50px;
+  height: 70px;
   width: 700px;
-  
+  border-radius: 30px;
+  border: 3px solid;
+  border-color: rgb(205, 44, 119);
+
  
+
+}
+
+img {
+background: transparent;
+  height: 20px;
+  width: 20px;
+}
+button{
+ 
+ margin-left: 1200px;
+
+
+
+
+
 }
 </style>
