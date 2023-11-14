@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 
 const routes = require('./routes/users');
 const routescate = require('./routes/noisescate');
+const routesnoises= require('./routes/noises');
 
 const cors = require("cors");
+const noises = require('./controllers/noises');
 
 server.use(cors());
 server.options("*", cors());
@@ -27,3 +29,4 @@ server.listen(5500, () => {
 
 routes(server);
 routescate(server);
+routesnoises(server);

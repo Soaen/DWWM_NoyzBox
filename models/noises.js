@@ -6,7 +6,7 @@ const NoisesSchema = new Schema({
     name: String,
     id_categories: String,
     id_propose_user: Number,
-    access: String,
+    filePath: String,
     id_admin_approve: Number,
     picture: String,
     created_at: { type: Date, default: Date.now },
