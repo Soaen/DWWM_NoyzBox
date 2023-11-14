@@ -89,6 +89,9 @@ Nous avons été missionnés afin de faire un site web de différents bruits.
 - [ ] Page Bruits
 - [ ] Page Ajouter un bruits
 - [ ] Page A Propos
+- [X] Page Connexion
+- [X] Page Inscription
+- [X] Page Profil
 
 <p align="right">(<a href="#readme-top">Retourner en haut</a>)</p>
 
