@@ -12,6 +12,7 @@ if (loggedUser == null || loggedUser.length === 0) {
   router.push('/');
 }
 
+
 function formatDate(dateString) {
             const date = dayjs(dateString);
             date.locale('fr')
@@ -30,6 +31,7 @@ function formatDate(dateString) {
         <h1>Bienvenue {{ loggedUser.pseudo }}</h1>
         <img src="../assets/images/default.jpg" alt="Photo de profil de l'utilisateur" class="img-profil">
         <p class="wip">Changer la photo de profil</p>
+        <RouterLink to='/addcategories' v-if="loggedUser.role == 'ADMIN'" class="cate-add-btn">Ajouter une catégorie</RouterLink>
     </div>
 
 
@@ -75,7 +77,10 @@ function formatDate(dateString) {
 </template>
 
 <style scoped lang="scss">
-
+.cate-add-btn{
+    color: white;
+    font-size: 20px;
+}
 .wip{
     font-style: oblique;
     text-decoration-line: line-through;
