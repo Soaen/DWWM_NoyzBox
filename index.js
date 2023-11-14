@@ -5,6 +5,7 @@ const server = express();
 const mongoose = require('mongoose');
 
 const routes = require('./routes/users');
+const routescate = require('./routes/noisescate');
 
 const cors = require("cors");
 
@@ -25,3 +26,4 @@ server.listen(5500, () => {
 })
 
 routes(server);
+routescate(server);
