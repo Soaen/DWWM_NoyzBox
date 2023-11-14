@@ -1,5 +1,6 @@
 <script setup>
 import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
 import router from '../router/index';
 import dayjs from 'dayjs'
 import { useUserStore } from '../stores/user';
@@ -12,13 +13,11 @@ if (loggedUser == null || loggedUser.length === 0) {
   router.push('/');
 }
 
-
 function formatDate(dateString) {
-            const date = dayjs(dateString);
-            date.locale('fr')
-                // Then specify how you want your dates to be formatted
-            return date.format('D/MM/YYYY');
-        }
+    const date = dayjs(dateString);
+    date.locale('fr')
+    return date.format('D/MM/YYYY');
+}
 </script>
 
 
@@ -72,7 +71,7 @@ function formatDate(dateString) {
 
 
 
-
+    <Footer/>
 
 </template>
 
