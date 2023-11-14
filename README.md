@@ -88,6 +88,7 @@ Nous avons été missionnés afin de faire un site web de différents bruits.
 - [ ] Page Accueil
 - [ ] Page Bruits
 - [ ] Page Ajouter un bruits
+- [X] Page Ajouter une catégorie
 - [ ] Page A Propos
 - [X] Page Connexion
 - [X] Page Inscription
