@@ -15,11 +15,9 @@ let nameCategorie = ref("");
 let cateNameValid = ref(true);
 
 if(loggedUser == null || loggedUser.length === 0){
-
     router.push('/');
 }else if(loggedUser.role != 'ADMIN'){
-  router.push('/');
-
+    router.push('/');
 }
 
 let addCategories = async ()=>{
@@ -51,7 +49,7 @@ let addCategories = async ()=>{
         isSend.value = false;
     }
 
-
+    cateNameValid.value = '';
     setTimeout(() => {
       isSend.value = '';
     }, 5000);
@@ -76,7 +74,7 @@ let addCategories = async ()=>{
 
                 <label for="name">Nom de la catégorie:</label>
                 <input type="text" v-model="nameCategorie" class="form-input">
-                <p v-if="!cateNameValid">Le nom de la catégorie dois contenir au minimum 5 lettres !</p>
+                <p v-if="!cateNameValid">Le nom de la catégorie dois contenir au minimum 3 lettres !</p>
                 <input type="submit" value="Ajouter la catégorie" class="submit-btn">
 
             </div>

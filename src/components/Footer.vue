@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router'
     <footer>
 
         <nav>
-            <div class="">
+            <div class="footer-container">
                 <div class="footer"> 
                <div class="noyzbox">
                  <p class="titre"> Noyzbox </p>
@@ -58,26 +58,21 @@ import { RouterLink } from 'vue-router'
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    background:  rgba(0, 0, 0, 0.5);
    margin-top: 200px;
-   
-   
+}
+
+.footer-container{
+    background:  rgba(0, 0, 0, 0.5);
+
 }
 
 .copyright{
     display: flex ;
     justify-content: center;
-
-    
- 
 }
+
 .copy{
     font-size: 22px;
-    margin: -60px;
-  
-
-    
-  
 }
 
 .titre{
@@ -88,7 +83,6 @@ import { RouterLink } from 'vue-router'
 
 }
 .noyzbox {
-
 margin-bottom: 7px;
 
 }
@@ -116,7 +110,6 @@ display: flex;
 flex-direction: column;
 color: rgb(255, 255, 255);
 
-margin-top: 40px;
 text-align: left;
 font-size: 35px ;
 
