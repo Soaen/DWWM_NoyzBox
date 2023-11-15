@@ -1,7 +1,6 @@
 <script setup>
 import Footer from "../components/Footer.vue";
 import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
 import router from '../router/index';
 import dayjs from 'dayjs'
 import { useUserStore } from '../stores/user';
