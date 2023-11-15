@@ -45,6 +45,7 @@ let addDatas = async ()=>{
         password: hash,
         saltHash: cryptSalt,
         email: userEmail.value,
+        picture: '',
         role: 'USER',
         favoris: '',
         created_at: new Date(),
