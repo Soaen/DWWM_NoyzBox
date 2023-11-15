@@ -8,14 +8,33 @@ module.exports = {
         });
     },
     
-    create(req,res){
-        const noise = new NoisesModel({...req.body});
+    async create(req,res){
+        const name = req.body.titre;
+        const proposeUser = req.body.proposeUser;
+        const adminApprove = req.body.adminApprove;
+        const category = req.body.category;
+        // Récupérer le chemin du fichier téléchargé
 
-        noise.save().then(() => {
-            res.send({
-                response: `Création de l'utilisateur ${noise.pseudo} effectuée avec succès`
-            });
-        })
+        const filePath = req.file.path;
+       
+
+        // Exemple avec un modèle fictif
+          
+        const audioInstance = new NoisesModel({ 
+            path: filePath, 
+            name: name,
+            id_categories: category,
+            id_propose_user: proposeUser,
+            id_admin_approve: adminApprove
+        });
+      
+        try {
+          await audioInstance.save();
+          res.status(200).send('Fichier téléchargé et enregistré avec succès.');
+        } catch (err) {
+            console.error(err);
+          res.status(500).send(err);
+        }
     },
 
     getByName(req, res){

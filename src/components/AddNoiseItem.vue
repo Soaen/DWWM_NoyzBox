@@ -1,35 +1,41 @@
 <script setup>
-import {ref} from "vue";
-import router from "../router/index";
-let noiseName = ref("");
-let category = ref("");
-let isSend = ref(false);
+import {ref, onMounted} from "vue";
+import { useUserStore } from '../stores/user'; 
 
-let file = ref(null); // Ajouter cette ligne
+const userStore = useUserStore();
+let noiseName = ref("");
+let category = ref([]);
+let isSend = ref(false);
+let file = ref(null); 
+let datasCate = ref();
+
 
 const onFileChange = (e) => {
     file.value = e.target.files[0];
 };
 
+const fetchData = async () => {
+    try{
+        const responseData = await fetch('http://localhost:5500/noise_categorie');
+        datasCate.value = await responseData.json();
+        console.log(datasCate.value);
+    }catch(err){
+        console.error(err);
+    }
+}
+
 let tryConnect = async () => {
 
     try {
-        const data = {
-            name: noiseName.value,
-            id_categories: category.value,
-            id_propose_user: 1,
-            filePath: "String",
-            id_admin_approve: 0,
-            picture: "String",
-            created_at: new Date(),
-            last_modified: new Date(),
-        };
 
-        
         let formData = new FormData();
-        formData.append('name', noiseName.value);
-        formData.append('id_categories', category.value);
-        formData.append('audioFile', file.value); // Ajouter le fichier ici
+        formData.append('titre', noiseName.value);
+        formData.append('category', category.value);
+        formData.append('adminApprove', 0);
+        formData.append('proposeUser', userStore.getLoggedUser[0]._id); //récupérer l'id de l'utilisateur actuellement connecté
+        formData.append('audioFile', file.value); 
+        formData.append('created_at', new Date());
+        formData.append('last_modified', new Date());
 
         const response = await fetch('http://localhost:5500/noises', {
             method: 'POST',
@@ -42,8 +48,6 @@ let tryConnect = async () => {
             isSend.value = false;
         }
 
-        router.push({ path: '/' })
-
         setTimeout(() => {
             isSend.value = '';
         }, 10000);
@@ -51,6 +55,10 @@ let tryConnect = async () => {
         console.error("Erreur lors de l'envoi de la requête", error);
     }
 }
+
+onMounted(() => {
+    fetchData();
+});
 
 </script>
 
@@ -67,7 +75,10 @@ let tryConnect = async () => {
                 </div>
                 <div class="form-input-container">
                     <label for="category">Catégorie(s) :</label>
-                    <input v-model="category" type="checkbox" name="category" id="category" class="form-category-input">
+                    <div v-for="cate in datasCate">
+                        <p>{{ cate.name }}</p>
+                        <input type="checkbox" :name="cate._id" :id="cate._id" :value="cate.name" v-model="category">
+                    </div>
                 </div>
                 <div class="form-input-container">
                     <label for="file" class="label-file">Choisir un bruit</label>
