@@ -8,9 +8,7 @@ import Header from '../components/Header.vue'
 
     <Header/>
 
-    <div>
-        <p>About</p>
-    </div>
+ 
 
 
     <Footer>
