@@ -1,7 +1,7 @@
 <script setup>
 import { useUserStore } from '../stores/user';
 import router from '../router/index';
-
+import Footer from "../components/Footer.vue";
 const store = useUserStore();
 
 
@@ -16,5 +16,9 @@ router.push('/')
 
     <h1>Déconnexion...</h1>
 
+
+    <Footer>
+
+</Footer>
 
 </template>

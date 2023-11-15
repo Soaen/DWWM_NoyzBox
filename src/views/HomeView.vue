@@ -1,6 +1,8 @@
 <script setup>
 import {ref} from "vue"
 import Header from '../components/Header.vue'
+import Footer from "../components/Footer.vue"
+
 let rechercheEntree = ref() 
 
 </script>
@@ -43,7 +45,9 @@ let rechercheEntree = ref()
 </main>
   
 
+<Footer>
 
+</Footer>
 
 
 </template>
