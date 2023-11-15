@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import router from '../router/index';
 import bcrypt from 'bcryptjs';
+import Footer from "../components/Footer.vue";
 
 let isSend = ref();
 let userPseudo = ref("");
@@ -155,6 +156,9 @@ let addDatas = async ()=>{
 
     </div>
 
+    <Footer>
+
+</Footer>
 </template>
 
 

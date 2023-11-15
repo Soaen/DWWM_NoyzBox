@@ -8,18 +8,17 @@ import { RouterLink } from 'vue-router'
     <footer>
 
         <nav>
-            <div class="Footer"></div>
+            <div class="footer"> 
                <div class="noyzbox">
-                 <p> Noyzbox </p>
-                    <p>
+                 <p class="titre"> Noyzbox </p>
+                    <p class="description">
                         Noyzbox est la bibliothèque de bruitages la plus complète et fun du web.
                     </p>
                 </div>
                 <div class="propos ">
-                    <p> À propos </p>
+                    <p class="titrepropos"> À propos </p>
                     <ul> 
-                        <li> <RouterLink to ="Nous" > Qui sommes nous</RouterLink></li>
-                       
+                        <li> <RouterLink to ="Nous" > Qui sommes nous</RouterLink> </li>
                        <li> <RouterLink to="FAQ"> FAQ </RouterLink>  </li>
                        <li> <RouterLink to="Accueil"> Accueil </RouterLink> </li>
                     </ul>
@@ -33,7 +32,7 @@ import { RouterLink } from 'vue-router'
                    <RouterLink to="Contact"> Contact </RouterLink>
                 </div>
 
-
+            </div>
         </nav>
     </footer>
 
@@ -42,6 +41,98 @@ import { RouterLink } from 'vue-router'
 
 
 <style scoped lang="scss">
+
+.footer{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background:  rgba(0, 0, 0, 0.5);
+   height: 300px;
+   margin-top: 200px;
+   
+   
+}
+
+.titre{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+
+}
+.noyzbox {
+
+margin-bottom: 10px;
+
+}
+.description{
+color: rgb(255, 255, 255);
+text-align: left;
+max-width: 320px;
+font-size: 28px ;
+font-family: 'Times New Roman', Times, serif;
+
+    
+}
+
+.propos {
+font-size: 30px;
+  color: rgb(182, 41, 182);
+
+
+ 
+
+}
+p{
+display: flex;
+flex-direction: column;
+color: rgb(255, 255, 255);
+
+margin-top: 40px;
+text-align: left;
+font-size: 35px ;
+
+
+}
+.titrepropos{
+
+color: rgb(255, 255, 255);
+font-size: 35px ;
+
+}
+
+
+.mention {
+    
+    color: aqua;
+
+
+}
+
+
+
+li {
+list-style: none;
+display: flex;
+
+
+}
+
+ul{
+    padding: 0;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px ;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
 
 
 </style>

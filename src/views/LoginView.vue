@@ -1,7 +1,7 @@
 <script setup>
 import LoginItem from '../components/LoginItem.vue'
 import Header from '../components/Header.vue'
-
+import Footer from "../components/Footer.vue";
 </script>
 
 <template>
@@ -11,4 +11,8 @@ import Header from '../components/Header.vue'
   <div>
     <LoginItem/>
   </div>
+
+  <Footer>
+
+</Footer>
 </template>
