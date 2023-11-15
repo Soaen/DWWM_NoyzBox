@@ -8,7 +8,8 @@ import { RouterLink } from 'vue-router'
     <footer>
 
         <nav>
-            <div class="footer"> 
+            <div class="">
+                <div class="footer"> 
                <div class="noyzbox">
                  <p class="titre"> Noyzbox </p>
                     <p class="description">
@@ -32,7 +33,14 @@ import { RouterLink } from 'vue-router'
                    <RouterLink to="Contact"> Contact </RouterLink>
                 </div>
 
+                
             </div>
+            <div class="copyright">
+                    <p class="copy"> Copyright @NoyzBox 2023</p>
+                </div>
+            </div>
+            
+
         </nav>
     </footer>
 
@@ -42,6 +50,8 @@ import { RouterLink } from 'vue-router'
 
 <style scoped lang="scss">
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .footer{
     
     display: flex;
@@ -49,20 +59,37 @@ import { RouterLink } from 'vue-router'
     flex-direction: row;
     justify-content: space-around;
     background:  rgba(0, 0, 0, 0.5);
-   height: 300px;
    margin-top: 200px;
    
    
 }
 
+.copyright{
+    display: flex ;
+    justify-content: center;
+
+    
+ 
+}
+.copy{
+    font-size: 22px;
+    margin: -60px;
+  
+
+    
+  
+}
+
 .titre{
     color: rgb(255, 255, 255);
     font-size: 50px;
+    margin-bottom: 3px;
+
 
 }
 .noyzbox {
 
-margin-bottom: 10px;
+margin-bottom: 7px;
 
 }
 .description{
@@ -70,14 +97,15 @@ color: rgb(255, 255, 255);
 text-align: left;
 max-width: 320px;
 font-size: 28px ;
-font-family: 'Times New Roman', Times, serif;
-
+font-family:'Poppins',Verdana, Geneva, Tahoma, sans-serif;
+margin-top: 5px;
     
 }
 
 .propos {
 font-size: 30px;
   color: rgb(182, 41, 182);
+  
 
 
  
@@ -129,7 +157,7 @@ a {
     flex-direction: row;
     font-size: 24px ;
     text-align: left;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Poppins',Verdana, Geneva, Tahoma, sans-serif
     
 }
 
