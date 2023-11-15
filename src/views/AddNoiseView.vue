@@ -2,6 +2,7 @@
 import AddNoiseItem from '../components/AddNoiseItem.vue';
 import Header from '../components/Header.vue';
 import {multer} from 'multer';
+import Footer from '../components/Footer.vue';
 
 // Configuration de Multer
 const storage = multer.diskStorage({
