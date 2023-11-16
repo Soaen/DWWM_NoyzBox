@@ -2,8 +2,9 @@
 import {ref, onMounted} from "vue";
 import { useUserStore } from '../stores/user'; 
 import Footer from "../components/Footer.vue";
-
+import router from '../router/index';
 const userStore = useUserStore();
+const loggedUser = userStore.getLoggedUser[0];
 let noiseName = ref("");
 let category = ref([]);
 let isSend = ref(false);
@@ -11,6 +12,9 @@ let file = ref(null);
 let datasCate = ref();
 let fileName = ref('')
 
+if(loggedUser == null || loggedUser.length === 0){
+    router.push('/');
+}
 
 const onFileChange = (e) => {
     file.value = e.target.files[0];
@@ -65,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div>
+    <div v-if="loggedUser != null && loggedUser.length != 0">
 
         <p class="title"> Ajoute un bruit !</p>
 
