@@ -28,6 +28,9 @@ function formatDate(dateString) {
 
     <div class="img-container" v-if="loggedUser.length !== 0">
         <h1>Bienvenue {{ loggedUser.pseudo }}</h1>
+        <RouterLink to="/addnoise" class="add-noise-btn">
+            <span>Télécharger un bruit</span>
+        </RouterLink>
         <img src="../assets/images/default.jpg" alt="Photo de profil de l'utilisateur" class="img-profil">
         <p class="wip">Changer la photo de profil</p>
         <RouterLink to='/addcategories' v-if="loggedUser.role == 'ADMIN'" class="cate-add-btn">Ajouter une catégorie</RouterLink>
@@ -120,5 +123,39 @@ function formatDate(dateString) {
             }
         }
     }
+}
+
+.add-noise-btn{
+    position: absolute;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #120817;
+    background-color: rgb(121, 44, 193);
+    border-radius: 2rem;
+}
+
+.add-noise-btn:hover span{
+    background-color: #c58bfe;
+}
+
+.add-noise-btn:active span{
+    translate: none;
+}
+
+.add-noise-btn span{
+    display: inherit;
+    border-radius: inherit;
+    background-color: #9859f6;
+    padding: 1rem 1rem;
+    translate: 0.25rem -0.25rem;
+    border: 2px solid #612a79;
+    transition: translate 100ms
+    cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 250ms;
+
+
 }
 </style>
