@@ -52,7 +52,13 @@ const router = createRouter({
       path: '/addnoise',
       name: 'addnoise',
       component: () => import('../views/AddNoiseView.vue')
+    },
+    {
+      path: '/detailnoises',
+      name: 'detailnoises',
+      component: () => import('../views/DetailNoisesView.vue')
     }
+    
   ]
 })
 

@@ -2,21 +2,163 @@
 
 import Header from '../components/Header.vue'
 import Footer from "../components/Footer.vue";
-
+import {onMounted, ref} from "vue";
 import { useUserStore } from '../stores/user';
 const store = useUserStore();
-const user = store.getLoggedUser();
+const user = store.getLoggedUser;
+let Datacate = ref() ;
+let Showeight = 0
+let Showall = false 
+
+let fetchcategory = async () => {
+    try {
+        const response = await fetch("http://localhost:5500/noise_categorie"); 
+        Datacate.value = await response.json();
+        console.log(Datacate);
+    } 
+    catch(err){
+        console.error(err);
+    }
+
+
+}
+onMounted (()=>{
+    fetchcategory();
+})
 
 </script>
 
 <template>
+
+
     <Header/>
+
     <div>
-        <p>Nos Sons</p>
+
+        <div class="categories">
+            <p> 
+                Catégories
+            </p>
+ <div class="catephoto">
+ 
+
+         <div v-for="(categories, index) in Datacate" :key="index" v-show="!Showall && index < 8"   class="boucle"
+>
+<div v-if="index< 8 " > 
+           <span class="form"> 
+         </span>
+         
+    <RouterLink to="/noisesview" class="detailnoises"> {{categories.name}}</RouterLink>
+
+</div>
+
+
+
+
+ </div>
+ 
+</div> 
+<div class="fleche">
+    <button class="btnfleche">
+        <img src="../assets/images/flecheblanche.svg" class="fle" alt="">
+
+    </button>
+
+
+        </div>
+    </div>
+
+
+
         <p>{{ user.pseudo }}</p>
+
+
     </div>
 
     <Footer>
 
 </Footer>
+
 </template>
+
+<style scoped lang="scss"> 
+
+.catephoto {
+
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100px;
+   
+
+
+    
+    
+
+}
+
+.form {
+display: block;
+    background-color: aqua;
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+ 
+    
+    
+}
+
+.boucle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    font-size: 20px;
+    margin-top: 30px;
+    
+    
+    
+
+}
+
+.detailnoises {
+
+    color: azure;
+}
+a {
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+
+
+.btnfleche {
+height: 70px;
+width: 70px;
+background-color: transparent;
+border: 0;
+display: flex;
+justify-content: center;
+flex-direction: row;
+
+}
+
+.fleche{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.fle{
+    height:90px ;
+    width: 90px;
+    display: flex;
+justify-content: center;
+
+    
+}
+</style>

@@ -38,7 +38,15 @@ import { RouterLink } from 'vue-router'
             <div class="copyright">
                     <p class="copy"> Copyright @NoyzBox 2023</p>
                 </div>
-            </div>
+
+<div class="social">
+
+    <img src="../assets/images/" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+</div>            
+
+</div>
             
 
         </nav>
@@ -98,7 +106,7 @@ margin-top: 5px;
 
 .propos {
 font-size: 30px;
-  color: rgb(182, 41, 182);
+
   
 
 
@@ -123,12 +131,7 @@ font-size: 35px ;
 }
 
 
-.mention {
-    
-    color: aqua;
 
-
-}
 
 
 
