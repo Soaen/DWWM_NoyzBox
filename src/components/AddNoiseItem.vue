@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted} from "vue";
 import { useUserStore } from '../stores/user'; 
+import Footer from "../components/Footer.vue";
 
 const userStore = useUserStore();
 let noiseName = ref("");
@@ -8,17 +9,18 @@ let category = ref([]);
 let isSend = ref(false);
 let file = ref(null); 
 let datasCate = ref();
+let fileName = ref('')
 
 
 const onFileChange = (e) => {
     file.value = e.target.files[0];
+    fileName.value = file.value.name;
 };
 
 const fetchData = async () => {
     try{
         const responseData = await fetch('http://localhost:5500/noise_categorie');
         datasCate.value = await responseData.json();
-        console.log(datasCate.value);
     }catch(err){
         console.error(err);
     }
@@ -69,19 +71,22 @@ onMounted(() => {
 
         <form method="POST" @submit.prevent="tryConnect">
             <div class="form-container">
+                <label class="label-title" for="titre">Titre du bruitage :</label>
                 <div class="form-input-container">
-                    <label for="titre">Titre du bruitage :</label>
+                    
                     <input v-model="noiseName" type="text" name="titre" id="titre" class="form-input" placeholder="Titre">
                 </div>
-                <div class="form-input-container">
-                    <label for="category">Catégorie(s) :</label>
-                    <div v-for="cate in datasCate">
-                        <p>{{ cate.name }}</p>
+
+                 <label class="category" for="category">Sélectionner Catégorie(s) :</label>
+                <div class="checkbox-input-container">
+                    <div class="checkbox" v-for="cate in datasCate">
+                        <label :for="cate._id">{{ cate.name }}</label>
                         <input type="checkbox" :name="cate._id" :id="cate._id" :value="cate.name" v-model="category">
                     </div>
                 </div>
                 <div class="form-input-container">
-                    <label for="file" class="label-file">Choisir un bruit</label>
+                    <label for="file" class="label-file">Importer</label>
+                    <label for="file">{{ fileName != "" ? fileName  : "Aucun son upload"  }}</label>
                     <input type="file" name="audioFile" id="file" class="input-file" @change="onFileChange">
                 </div>
                 <input type="submit" value="Envoyer" class="submit-btn">
@@ -89,6 +94,10 @@ onMounted(() => {
         </form>
 
     </div>
+
+    <Footer>
+
+    </footer>
 </template>
 
 <style scoped lang="scss">
@@ -107,14 +116,14 @@ onMounted(() => {
     .form-input-container {
         display: flex;
         flex-direction: column;
-        margin: 15px;
+        margin: 50px;
 
         .form-input {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 16px;
             background-color: rgba($color: #000000, $alpha: 0.2);
             height: 50px;
-            width: 360px;
+            width: 300px;
             padding-left: 20px;
             border-radius: 15px;
             color: white;
@@ -142,15 +151,19 @@ onMounted(() => {
     }
 }
 
+.label-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .label-file {
     cursor: pointer;
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     background-color: rgb(103, 102, 102);
     padding: 15px;
-    width: 200px;
+    width: 150px;
     border-radius: 15px;
     color: white;
     border: #4B4949 2px solid;
@@ -178,6 +191,29 @@ onMounted(() => {
     &:hover {
         background-color: rgba($color: rgb(113, 182, 39), $alpha: 1);
 
+    }
+}
+
+.category{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.checkbox-input-container{  
+    padding-top: 50px; 
+     width: 50%;
+     flex-wrap: wrap;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+        justify-content: space-between;
+}
+.checkbox{
+
+    display: flex;
+    width: 40%;
+    label{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 80%;
     }
 }
 </style>
