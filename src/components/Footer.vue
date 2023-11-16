@@ -19,18 +19,18 @@ import { RouterLink } from 'vue-router'
                 <div class="propos ">
                     <p class="titrepropos"> À propos </p>
                     <ul> 
-                        <li> <RouterLink to ="Nous" > Qui sommes nous</RouterLink> </li>
-                       <li> <RouterLink to="FAQ"> FAQ </RouterLink>  </li>
-                       <li> <RouterLink to="Accueil"> Accueil </RouterLink> </li>
+                        <li> <RouterLink to ="/" > Qui sommes nous</RouterLink> </li>
+                       <li> <RouterLink to="/"> FAQ </RouterLink>  </li>
+                       <li> <RouterLink to="/"> Accueil </RouterLink> </li>
                     </ul>
                 </div>
                 <div class="mention ">
                     <p> Mentions légales</p>
-                   <RouterLink to="Mentions légales" > Mentions légales </RouterLink>
+                   <RouterLink to="/"> Mentions légales </RouterLink>
                 </div>
                 <div class="contact">
                     <p> Contact </p>
-                   <RouterLink to="Contact"> Contact </RouterLink>
+                   <RouterLink to="/"> Contact </RouterLink>
                 </div>
 
                 
@@ -38,7 +38,15 @@ import { RouterLink } from 'vue-router'
             <div class="copyright">
                     <p class="copy"> Copyright @NoyzBox 2023</p>
                 </div>
-            </div>
+
+<div class="social">
+
+    <img src="../assets/images/" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+</div>            
+
+</div>
             
 
         </nav>
@@ -98,7 +106,7 @@ margin-top: 5px;
 
 .propos {
 font-size: 30px;
-  color: rgb(182, 41, 182);
+
   
 
 
@@ -123,12 +131,7 @@ font-size: 35px ;
 }
 
 
-.mention {
-    
-    color: aqua;
 
-
-}
 
 
 

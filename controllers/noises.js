@@ -38,14 +38,14 @@ module.exports = {
     },
 
     getByName(req, res){
-        const pseudo = sanitize(req.params.pseudo);
+        const name = sanitize(req.params.name);
         
-        console.log("Récupération de l'utilisateur avec le pseudo " , pseudo);
+        console.log("Récupération ddu bruit avec le nom " , name);
 
-        NoisesModel.findOne({ pseudo })
+        NoisesModel.findOne({ name })
             .then(noise => {
                 if (!noise) {
-                    return res.status(404).json({ error: 'Utilisateur non trouvé' });
+                    return res.status(404).json({ error: 'Bruit non trouvé' });
                 }
 
                 // Renvoyez le mot de passe de l'utilisateur
@@ -53,7 +53,7 @@ module.exports = {
             })
             .catch(err => {
                 console.error(err);
-                res.status(500).json({ error: 'Erreur lors de la recherche de l\'utilisateur' });
+                res.status(500).json({ error: 'Erreur lors de la recherche du bruit' });
             });
     },
 

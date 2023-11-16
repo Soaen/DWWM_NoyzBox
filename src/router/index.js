@@ -44,10 +44,21 @@ const router = createRouter({
       component: () => import('../views/ProfilView.vue')
     },
     {
+      path: '/search/name',
+      name: 'searchname',
+      component: () => import('../views/SearchByNameView.vue')
+    },
+    {
       path: '/addnoise',
       name: 'addnoise',
       component: () => import('../views/AddNoiseView.vue')
+    },
+    {
+      path: '/detailnoises',
+      name: 'detailnoises',
+      component: () => import('../views/DetailNoisesView.vue')
     }
+    
   ]
 })
 
