@@ -81,6 +81,9 @@ let addCategories = async ()=>{
             </div>
         </form>
     </div>
+
+    <Footer/>
+
 </template>
 
 
