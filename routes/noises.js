@@ -21,7 +21,7 @@ module.exports = server => {
     })
 
 
-    server.get("/noises/:pseudo", (req,res) => {
+    server.get("/noises/:name", (req,res) => {
         NoisesController.getByName(req, res);
     })
 

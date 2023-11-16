@@ -19,18 +19,18 @@ import { RouterLink } from 'vue-router'
                 <div class="propos ">
                     <p class="titrepropos"> À propos </p>
                     <ul> 
-                        <li> <RouterLink to ="Nous" > Qui sommes nous</RouterLink> </li>
-                       <li> <RouterLink to="FAQ"> FAQ </RouterLink>  </li>
-                       <li> <RouterLink to="Accueil"> Accueil </RouterLink> </li>
+                        <li> <RouterLink to ="/" > Qui sommes nous</RouterLink> </li>
+                       <li> <RouterLink to="/"> FAQ </RouterLink>  </li>
+                       <li> <RouterLink to="/"> Accueil </RouterLink> </li>
                     </ul>
                 </div>
                 <div class="mention ">
                     <p> Mentions légales</p>
-                   <RouterLink to="Mentions légales" > Mentions légales </RouterLink>
+                   <RouterLink to="/"> Mentions légales </RouterLink>
                 </div>
                 <div class="contact">
                     <p> Contact </p>
-                   <RouterLink to="Contact"> Contact </RouterLink>
+                   <RouterLink to="/"> Contact </RouterLink>
                 </div>
 
                 
