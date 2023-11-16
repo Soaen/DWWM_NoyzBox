@@ -37,8 +37,10 @@ onMounted(() => {
         
             <p v-for="data in datasByName">{{ data.name }}</p>
     </div>
+    
     <div v-else class="else-class">
 
+        <lottie-player src="https://lottie.host/28612908-7d80-4fcb-9972-928c2a302ef6/vTXWN9C6jV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
         <h2>Aucun bruit contenant "{{ store.getTempSearch }}" n'a été trouvé.</h2>
         
     </div>
@@ -50,9 +52,13 @@ onMounted(() => {
 <style scoped lang="scss">
 
 .else-class{
-    margin-top: 300px;
-    text-align: center;
+    width: 100%;
+    margin-top: 100px;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>
