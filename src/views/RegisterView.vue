@@ -23,8 +23,6 @@ const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 let addDatas = async ()=>{
     const salt = await bcrypt.genSalt(cryptSalt);
     const hash = await bcrypt.hash(userPassword.value, salt);
-
-
     
     if (
       userPseudo.value.length < 5 ||
@@ -96,6 +94,8 @@ let addDatas = async ()=>{
 
                 <div>
 
+                    <input type="checkbox" name="" id="">
+
                     <label for="pseudo">Pseudonyme :</label>
 
                     <div>
@@ -106,7 +106,6 @@ let addDatas = async ()=>{
                 </div>
 
                 <div>
-
 
                     <label for="email">Votre email :</label>
                     
@@ -145,10 +144,7 @@ let addDatas = async ()=>{
                     
                 </div>
 
-
-
             </div>
-            
 
             <input type="submit" value="JE M'INSCRIS" class="submit-btn">
 
@@ -156,9 +152,8 @@ let addDatas = async ()=>{
 
     </div>
 
-    <Footer>
+    <Footer/>
 
-</Footer>
 </template>
 
 
