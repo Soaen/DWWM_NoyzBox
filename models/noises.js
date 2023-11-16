@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const NoisesSchema = new Schema({
     name: String,
-    id_categories: String,
-    id_propose_user: Number,
-    filePath: String,
-    id_admin_approve: Number,
+    id_categories: Array,
+    id_propose_user: String,
+    path: String,
+    id_admin_approve: String,
     picture: String,
     created_at: { type: Date, default: Date.now },
     last_modified: { type: Date, default: Date.now }

@@ -27,6 +27,12 @@ server.listen(5500, () => {
       .on("error", error => console.error("oupsi ça a crash", error));
 })
 
+
+
+
+
+
+
 routes(server);
 routescate(server);
 routesnoises(server);

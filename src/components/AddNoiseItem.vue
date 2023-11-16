@@ -1,4 +1,64 @@
 <script setup>
+import {ref, onMounted} from "vue";
+import { useUserStore } from '../stores/user'; 
+
+const userStore = useUserStore();
+let noiseName = ref("");
+let category = ref([]);
+let isSend = ref(false);
+let file = ref(null); 
+let datasCate = ref();
+
+
+const onFileChange = (e) => {
+    file.value = e.target.files[0];
+};
+
+const fetchData = async () => {
+    try{
+        const responseData = await fetch('http://localhost:5500/noise_categorie');
+        datasCate.value = await responseData.json();
+        console.log(datasCate.value);
+    }catch(err){
+        console.error(err);
+    }
+}
+
+let tryConnect = async () => {
+
+    try {
+
+        let formData = new FormData();
+        formData.append('titre', noiseName.value);
+        formData.append('category', category.value);
+        formData.append('adminApprove', 0);
+        formData.append('proposeUser', userStore.getLoggedUser[0]._id); //récupérer l'id de l'utilisateur actuellement connecté
+        formData.append('audioFile', file.value); 
+        formData.append('created_at', new Date());
+        formData.append('last_modified', new Date());
+
+        const response = await fetch('http://localhost:5500/noises', {
+            method: 'POST',
+            body: formData, // Utiliser FormData
+        });
+
+        if (response.ok) {
+            isSend.value = true;
+        } else {
+            isSend.value = false;
+        }
+
+        setTimeout(() => {
+            isSend.value = '';
+        }, 10000);
+    } catch (error) {
+        console.error("Erreur lors de l'envoi de la requête", error);
+    }
+}
+
+onMounted(() => {
+    fetchData();
+});
 
 </script>
 
@@ -7,19 +67,22 @@
 
         <p class="title"> Ajoute un bruit !</p>
 
-        <form method="get" @submit.prevent="tryConnect">
+        <form method="POST" @submit.prevent="tryConnect">
             <div class="form-container">
                 <div class="form-input-container">
                     <label for="titre">Titre du bruitage :</label>
-                    <input type="text" name="titre" id="titre" class="form-input" placeholder="Titre">
+                    <input v-model="noiseName" type="text" name="titre" id="titre" class="form-input" placeholder="Titre">
                 </div>
                 <div class="form-input-container">
                     <label for="category">Catégorie(s) :</label>
-                    <input type="checkbox" name="category" id="category" class="form-category-input">
+                    <div v-for="cate in datasCate">
+                        <p>{{ cate.name }}</p>
+                        <input type="checkbox" :name="cate._id" :id="cate._id" :value="cate.name" v-model="category">
+                    </div>
                 </div>
                 <div class="form-input-container">
                     <label for="file" class="label-file">Choisir un bruit</label>
-                    <input type="file" name="" id="file" class="input-file" @change="onFileChange">
+                    <input type="file" name="audioFile" id="file" class="input-file" @change="onFileChange">
                 </div>
                 <input type="submit" value="Envoyer" class="submit-btn">
             </div>
@@ -29,12 +92,12 @@
 </template>
 
 <style scoped lang="scss">
-
-.title{
+.title {
     display: flex;
     justify-content: center;
     font-size: 2rem;
 }
+
 .form-container {
     width: 100%;
     display: flex;
