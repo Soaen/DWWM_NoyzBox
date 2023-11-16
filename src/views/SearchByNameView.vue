@@ -16,6 +16,7 @@ const fetchData = async () => {
     try{
         const responseData = await fetch('http://localhost:5500/noise/' + store.getTempSearch);
         datasByName.value = await responseData.json();
+        console.log(store.getTempSearch);
     }catch(err){
         console.error(err);
     }
@@ -38,7 +39,7 @@ onMounted(() => {
     </div>
     <div v-else class="else-class">
 
-        <h2>Aucun son avec ce nom n'a été trouver.</h2>
+        <h2>Aucun bruit contenant "{{ store.getTempSearch }}" n'a été trouvé.</h2>
         
     </div>
 

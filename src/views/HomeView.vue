@@ -1,11 +1,11 @@
 <script setup>
-import {ref} from "vue"
+import { ref } from "vue"
 import Header from '../components/Header.vue'
 import Footer from "../components/Footer.vue"
 import { useTempSearchStore } from '../stores/tempSearch';
 import router from "../router";
 const store = useTempSearchStore();
-let rechercheEntree = ref() 
+let rechercheEntree = ref("") 
 
 
 const fetchData = () => {
@@ -25,7 +25,7 @@ const fetchData = () => {
     <div class="barreSearch">
       <form @submit.prevent="fetchData" class="form-container">
         <div class="search-container">
-          <input type="text" placeholder="Search.." name="search">
+          <input type="text" placeholder="Search..." name="search" v-model="rechercheEntree">
           <button type="submit">
             <img src="../assets/images/search-svgrepo-com.svg" alt="loupe">
           </button>

@@ -28,4 +28,7 @@ export const useTempSearchStore = defineStore('tempsearch', {
           return this.tempSearch.length
         }
     },
+    persist: {
+        storage: sessionStorage, 
+      },
 })
