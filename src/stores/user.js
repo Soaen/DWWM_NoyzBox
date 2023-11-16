@@ -29,6 +29,6 @@ export const useUserStore = defineStore('user', {
         }
     },
     persist: {
-        storage: sessionStorage, // data in sessionStorage is cleared when the page session ends.
+        storage: sessionStorage, 
       },
 })
