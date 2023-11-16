@@ -30,8 +30,6 @@ const scrollToSection = (e) => {
             <a href="#nouslie" @click.prevent="scrollToSection('nouslie')">Ce qui nous lie ?  (notre amour du son, lol)</a>
             <a href="#comment" @click.prevent="scrollToSection('comment')">Comment nous avons pensé le projet ?</a>
  
-
-
         </div>
     </div>
 
@@ -40,7 +38,6 @@ const scrollToSection = (e) => {
 
                 <h2>Pourquoi Noyz Box ? </h2>
 
-
                 <div class="para-text-container-about">
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam doloribus voluptatem porro rerum itaque, id fugit cumque libero autem quo quos soluta placeat doloremque at eaque distinctio sequi, beatae laboriosam!</p>
@@ -51,11 +48,12 @@ const scrollToSection = (e) => {
 
                 </div>
             </div>
+
+
             <div class="text-container-about" id="qui">
 
                 <h2>Qui sommes-nous ? </h2>
 
-
                 <div class="para-text-container-about">
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam doloribus voluptatem porro rerum itaque, id fugit cumque libero autem quo quos soluta placeat doloremque at eaque distinctio sequi, beatae laboriosam!</p>
@@ -66,11 +64,14 @@ const scrollToSection = (e) => {
 
                 </div>
             </div>
+
+
+
+
             <div class="text-container-about" id="nouslie">
 
                 <h2>Ce qui nous lie ? </h2>
 
-
                 <div class="para-text-container-about">
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam doloribus voluptatem porro rerum itaque, id fugit cumque libero autem quo quos soluta placeat doloremque at eaque distinctio sequi, beatae laboriosam!</p>
@@ -81,11 +82,13 @@ const scrollToSection = (e) => {
 
                 </div>
             </div>
+
+
+
             <div class="text-container-about" id="comment">
 
                 <h2>Comment nous avons pensé le projet ? </h2>
 
-
                 <div class="para-text-container-about">
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam doloribus voluptatem porro rerum itaque, id fugit cumque libero autem quo quos soluta placeat doloremque at eaque distinctio sequi, beatae laboriosam!</p>
@@ -97,6 +100,7 @@ const scrollToSection = (e) => {
                 </div>
             </div>
 
+            
     <Footer/>
 
 </template>
