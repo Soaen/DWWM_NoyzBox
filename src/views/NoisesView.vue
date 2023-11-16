@@ -36,14 +36,13 @@ onMounted (()=>{
     <div>
 
         <div class="categories">
-            <p> 
+            <p class="noscategories"> 
                 Catégories
             </p>
  <div class="catephoto">
  
 
-         <div v-for="(categories, index) in Datacate" :key="index" v-show="!Showall && index < 8"   class="boucle"
->
+         <div v-for="(categories, index) in Datacate" :key="index" v-show="!Showall && index < 8"   class="boucle">
 <div v-if="index< 8 " > 
            <span class="form"> 
          </span>
@@ -68,9 +67,30 @@ onMounted (()=>{
         </div>
     </div>
 
+    <div class="pluslike">
+
+<p class="titre"> 
+    Les plus likés
+</p>
+
+<span class="form">
+
+</span>
+    </div>
+
+    <div class="last">
+<p  class="titre"> 
+    Les derniers ajoutés
+</p>
+
+<span class="form">  
+</span>
+
+    </div>
 
 
-        <p>{{ user.pseudo }}</p>
+
+   
 
 
     </div>
@@ -92,17 +112,19 @@ onMounted (()=>{
     align-content: space-between;
     flex-wrap: wrap;
     margin-top: 100px;
-   
 
-
-    
-    
 
 }
 
+.noscategories {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+color: rgb(255, 12, 194);}
+
 .form {
 display: block;
-    background-color: aqua;
+    background-color: rgb(179, 190, 190);
     border-radius: 200px;
     width: 80px;
     height: 80px;
@@ -161,4 +183,27 @@ justify-content: center;
 
     
 }
+
+.pluslike {
+    display: flex;
+justify-content: center;
+margin-top: 10%;
+flex-direction: column;
+align-items: center;
+}
+
+.titre{
+font-size: 30px;
+
+
+}
+
+.last {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 </style>
