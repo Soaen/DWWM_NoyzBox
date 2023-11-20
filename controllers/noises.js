@@ -37,19 +37,19 @@ module.exports = {
         }
     },
 
-    getByName(req, res){
+    getByName(req, res) {
         const name = sanitize(req.params.name);
-        
-        console.log("Récupération ddu bruit avec le nom " , name);
-
-        NoisesModel.findOne({ name })
-            .then(noise => {
-                if (!noise) {
-                    return res.status(404).json({ error: 'Bruit non trouvé' });
+    
+        console.log("Récupération du bruit avec le nom ", name);
+    
+        // Use a regular expression to perform a "contains" search
+        NoisesModel.find({ name: { $regex: name, $options: 'i' } })
+            .then(noises => {
+                if (noises.length === 0) {
+                    return res.status(404).json({ error: 'Aucun bruit trouvé' });
                 }
-
-                // Renvoyez le mot de passe de l'utilisateur
-                res.json({ noise });
+    
+                res.json({ noises });
             })
             .catch(err => {
                 console.error(err);
