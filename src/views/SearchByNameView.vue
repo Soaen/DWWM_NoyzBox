@@ -16,6 +16,7 @@ const fetchData = async () => {
     try{
         const responseData = await fetch('http://localhost:5500/noises/' + store.getTempSearch);
         datasByName.value = await responseData.json();
+        datasByName.value = datasByName.value.noises;
     
     }catch(err){
         console.error(err);
