@@ -27,6 +27,13 @@ onMounted(() => {
     fetchData();
 });
 
+const playSound = (noise) =>{
+    if(noise) {
+        var audio = new Audio(noise);
+        audio.play();
+      }
+}
+
 
 </script>
 
@@ -35,8 +42,12 @@ onMounted(() => {
     <Header/>
 
     <div v-if="datasByName != undefined">
-        
-            <p v-for="data in datasByName">{{ data.name }}</p>
+        <div v-for="data in datasByName">
+
+            <p >{{ data.name }}</p>
+            <button @click.prevent="playSound('http://localhost:5173/' + data.path)">Play</button>
+            
+        </div>
     </div>
     
     <div v-else class="else-class">
