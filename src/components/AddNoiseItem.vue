@@ -36,7 +36,7 @@ let tryConnect = async () => {
 
         let formData = new FormData();
         formData.append('titre', noiseName.value);
-        formData.append('titre', noiseName.value.toLowerCase());
+        formData.append('lowertitre', noiseName.value.toLowerCase());
         formData.append('category', category.value);
         formData.append('adminApprove', 0);
         formData.append('proposeUser', userStore.getLoggedUser[0]._id); //récupérer l'id de l'utilisateur actuellement connecté
