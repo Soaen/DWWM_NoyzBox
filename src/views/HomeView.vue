@@ -19,6 +19,15 @@ const fetchData = () => {
   <Header/>
 
   <main>
+    <div class="title-animation-container">
+      <span>N</span>
+      <span>o</span>
+      <span>y</span>
+      <span>z</span>
+      <span>B</span>
+      <span>o</span>
+      <span>x</span>
+    </div>
     <h1>Le meilleur des bruitages</h1>
     <h2>Hit bruitage only</h2>
 
@@ -42,6 +51,70 @@ const fetchData = () => {
 </template>
 
 <style scoped lang="scss"> 
+
+.title-animation-container{
+  display: flex;
+  justify-content: center;
+  font-family: 'Bangers';
+}
+.title-animation-container span{
+      font-size: 6rem;
+      color: white;
+      font-weight: bold;
+      opacity: 0;
+      animation: drop 0.4s linear forwards;
+
+    }
+
+.title-animation-container span:nth-child(2){
+  animation-delay: 0.2s;
+
+}
+.title-animation-container span:nth-child(3){
+  animation-delay: 0.3s;
+
+}
+.title-animation-container span:nth-child(4){
+  animation-delay: 0.4s;
+
+}
+.title-animation-container span:nth-child(5){
+  animation-delay: 0.5s;
+
+}
+.title-animation-container span:nth-child(6) {
+  animation-delay: 0.6s; 
+}
+
+.title-animation-container span:nth-child(7) {
+  animation-delay: 0.7s; 
+}
+
+
+
+@keyframes drop {
+  0%{
+    transform: translateY(-200px) scaleY(0.9);   
+  }
+  5%{
+    opacity: 0.7;
+  }
+  50%{
+    transform: translateY(0px) scaleY(1);
+  }
+  65%{
+    transform: translate(-17px) scaleY(0.9);
+  }
+  75%{
+    transform: translate(-22px) scaleY(0.9);
+  }
+  100%{
+    transform: translate(0px) scaleY(1);
+    opacity: 1;
+  }
+
+}
+
 
 .form-container{
   display: flex;
