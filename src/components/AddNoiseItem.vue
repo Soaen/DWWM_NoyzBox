@@ -74,7 +74,6 @@ onMounted(() => {
 
         <p class="title"> Ajoute un bruit !</p>
 
-        <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouter avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
 
         <form method="POST" @submit.prevent="tryConnect">
             <div class="form-container">
@@ -97,6 +96,8 @@ onMounted(() => {
                     <input type="file" name="audioFile" id="file" class="input-file" @change="onFileChange">
                 </div>
                 <input type="submit" value="Envoyer" class="submit-btn">
+
+                <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouter avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
             </div>
         </form>
 
