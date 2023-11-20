@@ -74,6 +74,8 @@ onMounted(() => {
 
         <p class="title"> Ajoute un bruit !</p>
 
+        <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouter avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
+
         <form method="POST" @submit.prevent="tryConnect">
             <div class="form-container">
                 <label class="label-title" for="titre">Titre du bruitage :</label>
