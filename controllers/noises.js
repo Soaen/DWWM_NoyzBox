@@ -38,9 +38,9 @@ module.exports = {
     },
 
     getByName(req, res) {
-        const name = sanitize(req.params.name);
+        const name = sanitize(req.params.name.toLowerCase());
     
-        console.log("Récupération du bruit avec le nom ", name);
+        console.log("Récupération du bruit avec le nom ", name.toLowerCase());
     
         // Use a regular expression to perform a "contains" search
         NoisesModel.find({ name: { $regex: name, $options: 'i' } })
