@@ -15,9 +15,9 @@ let store = useUserStore();
                 <img src="/logo.png" alt="" class="logo-navbar">
             </RouterLink>
             <div>
-                <RouterLink to="/">Accueil</RouterLink>
+                <RouterLink to="/" class="hidden-responsive">Accueil</RouterLink>
                 <RouterLink to="/noises">Nos bruits</RouterLink>
-                <RouterLink to="/about">A propos</RouterLink>
+                <RouterLink to="/about" class="hidden-responsive">A propos</RouterLink>
                 <RouterLink to="/login" v-if="store.getLoggedUser.length == 0">Se connecter</RouterLink>
                 <RouterLink to="/profil" v-if="store.getLoggedUser.length > 0">Profil</RouterLink>
                 <RouterLink to="/logout" v-if="store.getLoggedUser.length > 0">Se déconnecter</RouterLink>
@@ -69,6 +69,16 @@ header{
 
     }
      
+}
+
+
+@media screen and (max-width: 1200px) {
+header nav div{
+    width: 60%;
+}
+    .hidden-responsive{
+        display: none;
+    }
 }
 
 </style>

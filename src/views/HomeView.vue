@@ -190,4 +190,27 @@ button {
 
 }
 
+@media screen and (max-width: 1200px) {
+
+  .title-animation-container{
+    span{
+      font-size: 40px;
+
+    }
+  }
+  h1{
+    font-size: 32px;
+  }
+  .search-container{
+    margin-top: 40px;
+    width: 250px;
+    input{
+    width: 200px;
+  }
+
+  }
+
+
+}
+
 </style>
