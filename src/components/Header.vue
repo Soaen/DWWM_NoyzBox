@@ -74,7 +74,7 @@ header{
 
 @media screen and (max-width: 1200px) {
 header nav div{
-    width: 60%;
+    width: 70%;
 }
     .hidden-responsive{
         display: none;
