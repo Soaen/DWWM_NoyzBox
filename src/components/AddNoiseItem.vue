@@ -36,6 +36,7 @@ let tryConnect = async () => {
 
         let formData = new FormData();
         formData.append('titre', noiseName.value);
+        formData.append('lowertitre', noiseName.value.toLowerCase());
         formData.append('category', category.value);
         formData.append('adminApprove', 0);
         formData.append('proposeUser', userStore.getLoggedUser[0]._id); //récupérer l'id de l'utilisateur actuellement connecté
@@ -73,6 +74,7 @@ onMounted(() => {
 
         <p class="title"> Ajoute un bruit !</p>
 
+
         <form method="POST" @submit.prevent="tryConnect">
             <div class="form-container">
                 <label class="label-title" for="titre">Titre du bruitage :</label>
@@ -94,6 +96,8 @@ onMounted(() => {
                     <input type="file" name="audioFile" id="file" class="input-file" @change="onFileChange">
                 </div>
                 <input type="submit" value="Envoyer" class="submit-btn">
+
+                <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouter avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
             </div>
         </form>
 

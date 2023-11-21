@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const NoisesSchema = new Schema({
     name: String,
+    lowername: String,
     id_categories: Array,
     id_propose_user: String,
     path: String,

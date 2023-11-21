@@ -10,6 +10,7 @@ module.exports = {
     
     async create(req,res){
         const name = req.body.titre;
+        const lowername = req.body.lowertitre;
         const proposeUser = req.body.proposeUser;
         const adminApprove = req.body.adminApprove;
         const category = req.body.category;
@@ -21,8 +22,9 @@ module.exports = {
         // Exemple avec un modèle fictif
           
         const audioInstance = new NoisesModel({ 
-            path: filePath, 
+            path: filePath,
             name: name,
+            lowername: lowername,
             id_categories: category,
             id_propose_user: proposeUser,
             id_admin_approve: adminApprove
@@ -38,9 +40,9 @@ module.exports = {
     },
 
     getByName(req, res) {
-        const name = sanitize(req.params.name);
+        const name = sanitize(req.params.name.toLowerCase());
     
-        console.log("Récupération du bruit avec le nom ", name);
+        console.log("Récupération du bruit avec le nom ", name.toLowerCase());
     
         // Use a regular expression to perform a "contains" search
         NoisesModel.find({ name: { $regex: name, $options: 'i' } })

@@ -14,9 +14,10 @@ if(store.getTempSearch == ""){
 
 const fetchData = async () => {
     try{
-        const responseData = await fetch('http://localhost:5500/noise/' + store.getTempSearch);
+        const responseData = await fetch('http://localhost:5500/noises/' + store.getTempSearch);
         datasByName.value = await responseData.json();
-        console.log(store.getTempSearch);
+        datasByName.value = datasByName.value.noises;
+    
     }catch(err){
         console.error(err);
     }
@@ -26,6 +27,13 @@ onMounted(() => {
     fetchData();
 });
 
+const playSound = (noise) =>{
+    if(noise) {
+        var audio = new Audio(noise);
+        audio.play();
+      }
+}
+
 
 </script>
 
@@ -34,8 +42,12 @@ onMounted(() => {
     <Header/>
 
     <div v-if="datasByName != undefined">
-        
-            <p v-for="data in datasByName">{{ data.name }}</p>
+        <div v-for="data in datasByName">
+
+            <p >{{ data.name }}</p>
+            <button @click.prevent="playSound('http://localhost:5173/' + data.path)">Play</button>
+            
+        </div>
     </div>
     
     <div v-else class="else-class">
