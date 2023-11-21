@@ -158,4 +158,27 @@ function formatDate(dateString) {
 
 
 }
+
+@media screen and (max-width: 1200px) {
+
+    .add-noise-btn{
+        display: block;
+        right: auto;
+        margin-top: -40px;
+        margin-right: 0;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        .details-container{
+            width: 80%;
+            margin-left: 0;
+        }
+        div ul{
+            text-align: center!important;;
+
+        }
+    }
+
+}
 </style>
