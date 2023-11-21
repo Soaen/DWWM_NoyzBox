@@ -19,7 +19,9 @@ import { RouterLink } from 'vue-router'
                 <div class="propos ">
                     <p class="titrepropos"> À propos </p>
                     <ul> 
-                        <li> <RouterLink to ="/about"> Qui sommes nous</RouterLink> </li>
+
+                        <li> <RouterLink to ="/about" > Qui sommes nous</RouterLink> </li>
+
                        <li> <RouterLink to="/"> FAQ </RouterLink>  </li>
                        <li> <RouterLink to="/"> Accueil </RouterLink> </li>
                     </ul>
