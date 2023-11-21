@@ -94,8 +94,6 @@ let addDatas = async ()=>{
 
                 <div>
 
-                    <input type="checkbox" name="" id="">
-
                     <label for="pseudo">Pseudonyme :</label>
 
                     <div>
@@ -216,5 +214,25 @@ h1{
 
         }
     }
+}
+
+@media screen and (max-width: 1200px) {
+
+.form-register{
+    flex-direction: column;
+
+    .form-container{
+        flex-direction: column;
+
+        .form-input{
+
+            width: 90%;
+
+        }
+
+    }
+    
+}
+
 }
 </style>

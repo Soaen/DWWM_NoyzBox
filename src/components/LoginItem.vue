@@ -132,5 +132,15 @@ form{
     }
 }
 
+@media screen and (max-width: 1200px) {
+    form .form-container{
+        display: flex;
+        flex-direction: column;
+        .form-input-container .form-input{
+            width: 90%;
+        }
+    }
+}
+
 
 </style>

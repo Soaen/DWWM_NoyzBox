@@ -97,7 +97,7 @@ onMounted(() => {
                 </div>
                 <input type="submit" value="Envoyer" class="submit-btn">
 
-                <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouter avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
+                <p v-show="isSend && isSend != ''">{{ isSend ? "Bruit ajouté avec succès !" : "Un problème a été detecté, contactez un administrateur." }}</p>
             </div>
         </form>
 
@@ -223,5 +223,16 @@ onMounted(() => {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         width: 80%;
     }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .checkbox-input-container{
+        width: 80%;
+    }
+    .submit-btn{
+        margin-top: 0;
+    }
+
 }
 </style>

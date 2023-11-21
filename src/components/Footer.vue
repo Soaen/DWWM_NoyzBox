@@ -175,6 +175,11 @@ a {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
 }
