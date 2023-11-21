@@ -44,6 +44,8 @@ const playSound = (noise) =>{
 
     <Header/>
 
+    <p class="title">Résultats :</p>
+
     <div v-if="datasByName != undefined" class="play-container">
         <div v-for="data in datasByName" class="play-item">
 
@@ -77,23 +79,55 @@ const playSound = (noise) =>{
     align-items: center;
 }
 
+.title{
+    margin-top: 100px;
+    font-size: 40px; 
+    font-family: 'Bangers';
+    text-align: center;
+     
+}
+
 .play-container{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    max-width: 80%; // Limite la largeur maximale du conteneur
+    margin: auto; // Centre le conteneur sur la page
+    margin-top: 100px;
 }
 
 .play-item{
     flex-basis: 20%;
+    margin: 0 10px; // Ajoute une marge de 10px à gauche et à droite
     margin-bottom: 50px;
-}
+    }p{
+        font-size: 15px;
+        font-family: 'Poppins', sans-serif;
+    }       
 
-.play-btn{
+.play-btn {
     background-color: rgba(255, 255, 255, 0);
     border: 0;
     cursor: pointer;
+
+    img {
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 0px #360982;
+        transition: all 0.3s ease;
+
+        &:hover {
+            filter: brightness(1.4);
+        }
+    }
+
+    &:active img {
+        box-shadow: none;
+        transform: translateY(4px);
+        filter: brightness(1.7);
+    }
 }
+
+
 
 </style>
