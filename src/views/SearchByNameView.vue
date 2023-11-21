@@ -32,7 +32,7 @@ onMounted(() => {
 
 const playSound = (noise) =>{
     if(noise) {
-        var audio = new Audio(noise);
+        let audio = new Audio(noise);
         audio.play();
       }
 }
@@ -44,11 +44,12 @@ const playSound = (noise) =>{
 
     <Header/>
 
-    <div v-if="datasByName != undefined">
-        <div v-for="data in datasByName">
+    <div v-if="datasByName != undefined" class="play-container">
+        <div v-for="data in datasByName" class="play-item">
 
             <p >{{ data.name }}</p>
-            <button @click.prevent="playSound('http://localhost:5173/' + data.path)">Play</button>
+            <button class="play-btn" @click.prevent="playSound('http://localhost:5173/' + data.path)">
+            <img src="../assets/images/play-btn3.png" alt=""></button>
             
         </div>
     </div>
@@ -74,6 +75,25 @@ const playSound = (noise) =>{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.play-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.play-item{
+    flex-basis: 20%;
+    margin-bottom: 50px;
+}
+
+.play-btn{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    cursor: pointer;
 }
 
 </style>
