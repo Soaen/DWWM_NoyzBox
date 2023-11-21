@@ -19,17 +19,17 @@ import { RouterLink } from 'vue-router'
                 <div class="propos ">
                     <p class="titrepropos"> À propos </p>
                     <ul> 
-                        <li> <RouterLink to ="/" > Qui sommes nous</RouterLink> </li>
+                        <li> <RouterLink to ="/about"> Qui sommes nous</RouterLink> </li>
                        <li> <RouterLink to="/"> FAQ </RouterLink>  </li>
                        <li> <RouterLink to="/"> Accueil </RouterLink> </li>
                     </ul>
                 </div>
                 <div class="mention ">
-                    <p> Mentions légales</p>
+                    <p class="titremention"> Mentions légales</p>
                    <RouterLink to="/"> Mentions légales </RouterLink>
                 </div>
                 <div class="contact">
-                    <p> Contact </p>
+                    <p class="titrecontact"> Contact </p>
                    <RouterLink to="/"> Contact </RouterLink>
                 </div>
 
@@ -155,6 +155,28 @@ a {
     text-align: left;
     font-family:'Poppins',Verdana, Geneva, Tahoma, sans-serif
     
+}
+
+
+@media screen and (max-width: 1200px) {
+    a{
+        font-size: 16px;
+
+    }
+    .titrepropos, .titrecontact, .titremention, .copy{
+        font-size: 20px;
+    }
+    .titre, .description{
+        display: none;
+    }
+
+    .propos, .copyright, .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
 }
 
 
