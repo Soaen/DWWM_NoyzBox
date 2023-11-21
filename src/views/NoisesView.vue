@@ -51,6 +51,12 @@ let sortData=()=>
     }
 }
 
+const playSound = (noise) =>{
+    if(noise) {
+        var audio = new Audio(noise);
+        audio.play();
+      }
+}
 
 
 
@@ -110,9 +116,12 @@ let sortData=()=>
 
     <div v-for="(noises, index) in Datasort" :key="index" v-show="!Showall && index < 5"   class="boucle">
 <div v-if="index< 5 " > 
-    <span class="form"> </span>
 
-<p> {{noises.name}} > </p>
+
+   <p >{{ noises.name }}</p>
+            <button class="play-btn" @click.prevent="playSound('http://localhost:5173/' + noises.path)">
+            <img src="../assets/images/play-btn3.png" alt="button play"> </button>
+            
 
 </div>
 
