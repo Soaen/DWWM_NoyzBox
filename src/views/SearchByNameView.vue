@@ -5,6 +5,9 @@ import { useTempSearchStore } from '../stores/tempSearch';
 import router from '../router';
 import {ref, onMounted} from 'vue';
 
+const url = import.meta.env.VITE_APP_HOST
+
+
 const store = useTempSearchStore();
 let datasByName = ref();
 
@@ -14,7 +17,7 @@ if(store.getTempSearch == ""){
 
 const fetchData = async () => {
     try{
-        const responseData = await fetch('http://localhost:5500/noises/' + store.getTempSearch);
+        const responseData = await fetch(url + 'noises/' + store.getTempSearch);
         datasByName.value = await responseData.json();
         datasByName.value = datasByName.value.noises;
     

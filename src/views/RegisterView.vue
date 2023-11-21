@@ -5,6 +5,8 @@ import router from '../router/index';
 import bcrypt from 'bcryptjs';
 import Footer from "../components/Footer.vue";
 
+const url = import.meta.env.VITE_APP_HOST
+
 let isSend = ref();
 let userPseudo = ref("");
 let userPassword = ref("");
@@ -50,7 +52,7 @@ let addDatas = async ()=>{
         last_modified: new Date(),
     };
 
-    const response = await fetch('http://localhost:5500/users', {
+    const response = await fetch(url + 'users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -231,7 +233,7 @@ h1{
         }
 
     }
-    
+
 }
 
 }
