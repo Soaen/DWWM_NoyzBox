@@ -85,9 +85,9 @@ Nous avons été missionnés afin de faire un site web de différents bruits.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Page Accueil
+- [X] Page Accueil
 - [ ] Page Bruits
-- [ ] Page Ajouter un bruits
+- [X] Page Ajouter un bruits
 - [X] Page Ajouter une catégorie
 - [X] Page A Propos
 - [X] Page Connexion
