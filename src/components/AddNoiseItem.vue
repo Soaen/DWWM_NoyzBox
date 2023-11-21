@@ -12,6 +12,8 @@ let file = ref(null);
 let datasCate = ref();
 let fileName = ref('')
 
+
+const url = import.meta.env.VITE_APP_HOST
 if(loggedUser == null || loggedUser.length === 0){
     router.push('/');
 }
@@ -23,7 +25,7 @@ const onFileChange = (e) => {
 
 const fetchData = async () => {
     try{
-        const responseData = await fetch('http://localhost:5500/noise_categorie');
+        const responseData = await fetch(url + 'noise_categorie');
         datasCate.value = await responseData.json();
     }catch(err){
         console.error(err);

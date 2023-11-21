@@ -37,16 +37,28 @@ import { RouterLink } from 'vue-router'
 
                 
             </div>
-            <div class="copyright">
+            <div>
+
+            
+                <div class="copyright">
                     <p class="copy"> Copyright @NoyzBox 2023</p>
                 </div>
+                <div class="social">
+                    <a href="https://facebook.com">
+                        <img src="../assets/images/facebook.svg" alt="" class="media">
+                    </a>
+                    <a href="https://tiktok.com">
+                        <img src="../assets/images/tiktok.svg" alt="" class="media">
+                    
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="../assets/images/instagram.svg" alt="" class="media">
+                    
+                    </a>
+                    </div>
+            </div>  
 
-<div class="social">
-
-    <img src="../assets/images/" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-</div>            
+      
 
 </div>
             
@@ -68,7 +80,7 @@ import { RouterLink } from 'vue-router'
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-   margin-top: 200px;
+    margin-top: 200px;
 }
 
 .footer-container{
@@ -79,6 +91,7 @@ import { RouterLink } from 'vue-router'
 .copyright{
     display: flex ;
     justify-content: center;
+    flex-direction: row;
 }
 
 .copy{
@@ -108,12 +121,6 @@ margin-top: 5px;
 
 .propos {
 font-size: 30px;
-
-  
-
-
- 
-
 }
 p{
 display: flex;
@@ -132,16 +139,9 @@ font-size: 35px ;
 
 }
 
-
-
-
-
-
 li {
 list-style: none;
 display: flex;
-
-
 }
 
 ul{
@@ -159,6 +159,16 @@ a {
     
 }
 
+.media{
+    filter: invert(95%) sepia(100%) saturate(0%) hue-rotate(25deg) brightness(102%) contrast(101%);
+}
+
+.social{
+    margin-left: 80%;
+    margin-top: -50px;
+    display: flex;
+    flex-direction: row;
+}
 
 @media screen and (max-width: 1200px) {
     a{
@@ -172,7 +182,7 @@ a {
         display: none;
     }
 
-    .propos, .copyright, .contact{
+    .propos, .contact{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -182,6 +192,10 @@ a {
             flex-direction: column;
             justify-content: center;
         }
+    }
+    .social{
+        margin-left: 30%;
+        margin-top: 0;
     }
 
 }
