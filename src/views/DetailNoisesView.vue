@@ -47,10 +47,9 @@ const playSound = (noise) =>{
 <template>
 
     <Header/>
-    <h1>hello</h1>
 <div class="Categorie">
 
-    <h1 class="nomcate"> {{  route.query.category  }} </h1>
+    <p class="nomcate"> {{  route.query.category  }} </p>
 
 </div>
 
@@ -73,4 +72,49 @@ const playSound = (noise) =>{
 
 
 </template>
+
+<style scoped lang="scss"> 
+
+.play-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    cursor: pointer;
+
+    img {
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 0px #360982;
+        transition: all 0.3s ease;
+
+        &:hover {
+            filter: brightness(1.4);
+        }
+    }
+
+    &:active img {
+        box-shadow: none;
+        transform: translateY(4px);
+        filter: brightness(1.7);
+    }
+}
+
+.affichage {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right:20% ;
+    
+}
+
+.nomcate {
+
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 27, 141);
+   
+}
+</style>
 
