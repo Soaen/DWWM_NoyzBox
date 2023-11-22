@@ -90,26 +90,25 @@ module.exports = {
     },
 
 
-getByCategorie(req, res) {
-    const categorie = sanitize(req.params.categorie);
-
-    console.log("Récupération du bruit avec la catégorie ", categorie);
-
-
-    NoisesModel.find({ categorie })
-        .then(noises => {
-            if (noises.length === 0) {
-                return res.status(404).json({ error: 'Aucun bruit trouvé' });
-            }
-
-            res.json({ noises });
-        })
-        .catch(err => {
-            console.error(err);
-            res.status(500).json({ error: 'Erreur lors de la recherche du bruit' });
-        });
-}
-
+    getByCategorie(req, res) {
+        const categorie = sanitize(req.params.categorie);
+    
+        console.log("Récupération du bruit avec la catégorie ", categorie);
+    
+        NoisesModel.find({ id_categories: { $regex: categorie, $options: 'i' } })
+            .then(noises => {
+                if (noises.length === 0) {
+                    return res.status(404).json({ error: 'Aucun bruit trouvé dans cette catégorie' });
+                }
+    
+                res.json({ noises });
+            })
+            .catch(err => {
+                console.error(err);
+                res.status(500).json({ error: 'Erreur lors de la recherche du bruit' });
+            });
+    }
+    
 
 }
 
