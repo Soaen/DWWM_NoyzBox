@@ -9,7 +9,6 @@ const routescate = require('./routes/noisescate');
 const routesnoises= require('./routes/noises');
 
 const cors = require("cors");
-const noises = require('./controllers/noises');
 
 server.use(cors());
 server.options("*", cors());

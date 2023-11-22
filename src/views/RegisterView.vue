@@ -39,6 +39,34 @@ let addDatas = async ()=>{
     return; // Empêche l'envoi des données si l'une des validations échoue
   }
 
+
+  if (userPseudo.value.length < 5) {
+  userPseudoValid.value = false;
+} else {
+  userPseudoValid.value = true;
+}
+
+if (userPassword.value.length < 8) {
+  userPasswordValid.value = false;
+} else {
+  userPasswordValid.value = true;
+}
+
+if (userConfirmPassword.value !== userPassword.value) {
+  userConfirmPasswordValid.value = false;
+} else {
+  userConfirmPasswordValid.value = true;
+}
+
+if (!emailRegex.test(userEmail.value)) {
+  userEmailValid.value = false;
+} else {
+  userEmailValid.value = true;
+}
+if (!userPseudoValid.value || !userPasswordValid.value || !userConfirmPasswordValid.value || !userEmailValid.value) {
+  return;
+}
+
     try {
     const data = {
         pseudo: userPseudo.value,

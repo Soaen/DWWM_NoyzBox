@@ -1,8 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useTempSearchStore } from '../stores/tempSearch';
 
 import { useUserStore } from '../stores/user';
 let store = useUserStore();
+
+const storesearch = useTempSearchStore();
+
+const searchData = storesearch.getTempSearch != undefined ? storesearch.getTempSearch : null;
 
 </script>
 
@@ -10,9 +15,11 @@ let store = useUserStore();
 
     <header>
         <nav>
-            <RouterLink to="/">
-                <img src="/logo.png" alt="" class="logo-navbar">
+            <RouterLink to="/" >
+                <img src="/logo.png" alt="" class="logo-navbar" v-if="searchData == null || searchData != 'fred'">
+                <img src="../assets/images/fred.png" alt="fred easter egg" class="logo-navbar easteregg" v-else>
             </RouterLink>
+
             <div>
                 <RouterLink to="/" class="hidden-responsive">Accueil</RouterLink>
                 <RouterLink to="/noises">Nos bruits</RouterLink>
@@ -61,7 +68,6 @@ header{
         }            
 
         .logo-navbar{
-
             height: 80px;
             &:hover{
                 opacity: 0.8;
@@ -75,6 +81,11 @@ header{
      
 }
 
+.easteregg{
+    border-radius: 2500%;
+    width: 80px;
+    object-fit: cover;
+}
 
 @media screen and (max-width: 1200px) {
 header nav div{
