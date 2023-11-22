@@ -9,6 +9,8 @@ const user = store.getLoggedUser;
 let Datacate = ref() ;
 let Showeight = 0
 let Showall = false 
+let Datanoises = ref();
+let Datasort = ref([]);
 
 let fetchcategory = async () => {
     try {
@@ -22,9 +24,41 @@ let fetchcategory = async () => {
 
 
 }
+let fetchcnoises= async () => {
+    try {
+        const response = await fetch("http://localhost:5500/noises"); 
+        Datanoises.value = await response.json();
+        sortData()
+    } 
+    catch(err){
+        console.error(err);
+    }
+
+
+}
 onMounted (()=>{
     fetchcategory();
+    fetchcnoises();
 })
+
+let sortData=()=>
+{
+    const noiseslength =  Datanoises.value.length -1;
+    Datanoises.value.length  ;
+    for (let i = noiseslength; i > noiseslength -5 ; i--) {
+        Datasort.value.push(Datanoises.value[i])
+        
+    }
+}
+
+const playSound = (noise) =>{
+    if(noise) {
+        var audio = new Audio(noise);
+        audio.play();
+      }
+}
+
+
 
 </script>
 
@@ -55,7 +89,8 @@ onMounted (()=>{
 
 
  </div>
- 
+ </div>
+
 </div> 
 <div class="fleche">
     <button class="btnfleche">
@@ -67,31 +102,30 @@ onMounted (()=>{
         </div>
     </div>
 
-    <div class="pluslike">
-
-<p class="titre"> 
-    Les plus likés
-</p>
-
-<span class="form">
-
-</span>
-    </div>
 
     <div class="last">
 <p  class="titre"> 
     Les derniers ajoutés
 </p>
 
-<span class="form">  
-</span>
+
 
     </div>
 
+<div class="last-add "> 
+
+    <div v-for="(noises, index) in Datasort" :key="index" v-show="!Showall && index < 5"   class="boucle">
+<div v-if="index< 5 " > 
 
 
-   
+   <p >{{ noises.name }}</p>
+            <button class="play-btn" @click.prevent="playSound('http://localhost:5173/' + noises.path)">
+            <img src="../assets/images/play-btn3.png" alt="button play"> </button>
+            
 
+</div>
+
+</div>
 
     </div>
 
@@ -124,7 +158,7 @@ color: rgb(255, 12, 194);}
 
 .form {
 display: block;
-    background-color: rgb(179, 190, 190);
+    background-color: rgb(16, 143, 143);
     border-radius: 200px;
     width: 80px;
     height: 80px;
@@ -204,6 +238,15 @@ font-size: 30px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.last-add{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
 }
 
 </style>
