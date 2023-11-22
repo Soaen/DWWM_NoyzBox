@@ -74,7 +74,7 @@ onMounted(() => {
       <span>o</span>
       <span>x</span>
     </div>
-    <h1 class="slogan">Le meilleur des bruitages</h1>
+    <h1 class="slogan">Le meilleur des bruitages !</h1>
    
     <div class="barreSearch">
       <form @submit.prevent="fetchData" class="form-container">
@@ -86,7 +86,9 @@ onMounted(() => {
         </div>
       </form>
     </div>
+    
   </main>
+
 
 
   <Footer />
@@ -131,7 +133,21 @@ onMounted(() => {
      -1px 1px 0 #000,
      1px 1px 0 #000;
    font-size: 50px;
- }
+   opacity: 0;
+  animation: slide 1.5s ease forwards;
+}
+ 
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(100%); /* Commence à droite (hors de la vue) */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Glisse vers la gauche (position fixe) */
+  }
+}
 
  .title-animation-container span:nth-child(2) {
    animation-delay: 0.2s;
@@ -210,6 +226,10 @@ onMounted(() => {
      -25px 10px 30px -5px rgba(255, 230, 0, 0.5);
    padding: 4px;
    border-radius: 25px;
+
+   &:hover {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.883);
+    }
  }
 
 @keyframes blink {
@@ -285,6 +305,12 @@ onMounted(() => {
      }
 
    }
+
+  .lotie-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
  }</style>
