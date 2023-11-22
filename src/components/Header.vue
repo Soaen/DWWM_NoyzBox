@@ -61,7 +61,6 @@ header{
         }            
 
         .logo-navbar{
-
             height: 80px;
             &:hover{
                 opacity: 0.8;
