@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    
     {
       path: '/',
       name: 'home',
@@ -58,7 +59,7 @@ const router = createRouter({
       name: 'detailnoises',
       component: () => import('../views/DetailNoisesView.vue')
     }
-    
+
   ]
 })
 
