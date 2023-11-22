@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import { useUserStore } from '../stores/user';
 import router from '../router/index';
 
+const url = import.meta.env.VITE_APP_HOST
 const store = useUserStore();
 
 let userPseudo = ref("");
@@ -15,7 +16,7 @@ let isLoginFailed = ref(false);
 
 let tryConnect = async () => {
 
-    const response = await fetch('http://localhost:5500/users/' + userPseudo.value, {
+    const response = await fetch(url + 'users/' + userPseudo.value, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

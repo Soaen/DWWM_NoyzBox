@@ -7,6 +7,8 @@ import Footer from '../components/Footer.vue';
 import { useUserStore } from '../stores/user';
 const store = useUserStore();
 
+const url = import.meta.env.VITE_APP_HOST
+
 const loggedUser = store.getLoggedUser[0];
 
 import { ref } from 'vue'
@@ -36,7 +38,7 @@ let addCategories = async ()=>{
         name: nameCategorie.value
     };
 
-    const response = await fetch('http://localhost:5500/noise_categorie', {
+    const response = await fetch(url + 'noise_categorie', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

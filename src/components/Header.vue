@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import {ref} from 'vue';
 
 import { useUserStore } from '../stores/user';
 let store = useUserStore();
@@ -64,6 +63,9 @@ header{
         .logo-navbar{
 
             height: 80px;
+            &:hover{
+                opacity: 0.8;
+            }
 
         }
 
