@@ -39,6 +39,7 @@ let fetchcnoises= async () => {
 onMounted (()=>{
     fetchcategory();
     fetchcnoises();
+    
 })
 
 let sortData=()=>
