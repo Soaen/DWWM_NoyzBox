@@ -10,6 +10,7 @@ const url = import.meta.env.VITE_APP_HOST
 
 const store = useTempSearchStore();
 let datasByName = ref();
+let isLoading = ref(true);
 
 if(store.getTempSearch == ""){
     router.push('/');
@@ -20,7 +21,8 @@ const fetchData = async () => {
         const responseData = await fetch(url + 'noises/' + store.getTempSearch);
         datasByName.value = await responseData.json();
         datasByName.value = datasByName.value.noises;
-    
+        isLoading.value = false
+        
     }catch(err){
         console.error(err);
     }
@@ -44,7 +46,9 @@ const playSound = (noise) =>{
 
     <Header/>
 
-    <p class="title">Résultats :</p>
+    <div v-if="!isLoading">
+
+        <p class="title">Résultats :</p>
 
     <div v-if="datasByName != undefined" class="play-container">
         <div v-for="data in datasByName" class="play-item">
@@ -62,6 +66,11 @@ const playSound = (noise) =>{
         <h2>Aucun bruit contenant "{{ store.getTempSearch }}" n'a été trouvé.</h2>
         
     </div>
+
+        
+    </div>
+
+    
 
     <Footer/>
 
