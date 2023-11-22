@@ -71,6 +71,8 @@ header{
             height: 80px;
             &:hover{
                 opacity: 0.8;
+                transform: rotate(360deg);
+                transition: transform 0.5s ease; 
             }
 
         }
