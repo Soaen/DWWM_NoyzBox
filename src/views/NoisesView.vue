@@ -76,12 +76,14 @@ const playSound = (noise) =>{
  <div class="catephoto">
  
 
-         <div v-for="(categories, index) in Datacate" :key="index" v-show="!Showall && index < 8"   class="boucle">
+         <RouterLink :to="'/detailnoises?category=' + categories.name"  v-for="(categories, index) in Datacate"  v-show="!Showall && index < 8"   class="boucle">  {{ categories.name }} </RouterLink>
+
 <div v-if="index< 8 " > 
            <span class="form"> 
          </span>
          
-    <RouterLink to="/noisesview" class="detailnoises"> {{categories.name}}</RouterLink>
+
+<p>   {{categories.name}}</p>
 
 </div>
 
@@ -100,7 +102,7 @@ const playSound = (noise) =>{
 
 
         </div>
-    </div>
+  
 
 
     <div class="last">
@@ -151,7 +153,7 @@ const playSound = (noise) =>{
 }
 
 .noscategories {
-    font-size: 30px;
+    font-size: 70px;
     display: flex;
     justify-content: center;
 color: rgb(255, 12, 194);}
@@ -173,9 +175,10 @@ display: block;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 450px;
+    width: 25%;
     font-size: 20px;
     margin-top: 30px;
+
     
     
     
@@ -191,6 +194,29 @@ a {
     margin-top: 20px;
 }
 
+
+.play-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    cursor: pointer;
+
+    img {
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 0px #360982;
+        transition: all 0.3s ease;
+
+        &:hover {
+            filter: brightness(1.4);
+        }
+    }
+
+    &:active img {
+        box-shadow: none;
+        transform: translateY(4px);
+        filter: brightness(1.7);
+    }
+}
 
 
 .btnfleche {
@@ -241,7 +267,7 @@ font-size: 30px;
 }
 
 .last-add{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
