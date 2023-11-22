@@ -38,5 +38,10 @@ module.exports = server => {
     server.post('/noises', upload.single('audioFile'), (req, res) => {
       NoisesController.create(req, res);
   });
+
+  server.get("/noisesbycate/:categorie",(req,res)=>{
+    NoisesController.getByCategorie(req,res);
+  })
+
   
 }
