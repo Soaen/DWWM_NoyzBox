@@ -86,7 +86,9 @@ onMounted(() => {
         </div>
       </form>
     </div>
+    
   </main>
+
 
 
   <Footer />
@@ -297,6 +299,12 @@ onMounted(() => {
      }
 
    }
+
+  .lotie-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
  }</style>
