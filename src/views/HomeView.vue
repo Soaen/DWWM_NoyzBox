@@ -17,7 +17,7 @@ const placeholderText = ref(''); // Pour stocker le texte du placeholder
 const cursorSpan = '|'; // Curseur
 let isCursorVisible = true; // État de visibilité du curseur
 
-const phrases = ["Applaudissements", "Cri", "Fred", "Rire", "Bip"]; // Textes à animer
+const phrases = ["Applaudissements", "Cri", "Fred", "Rire", "Bip"];
 let currentPhraseIndex = 0;
 let currentLetterIndex = 0;
 let isDeleting = false;
@@ -80,7 +80,6 @@ onMounted(() => {
       <form @submit.prevent="fetchData" class="form-container">
         <div class="search-container">
           <input type="text" :placeholder="placeholderText" name="search" v-model="rechercheEntree">
-          <span class="typing-cursor" v-show="cursorVisible"></span>
           <button type="submit">
             <img src="../assets/images/search-svgrepo-com.svg" alt="loupe">
           </button>
