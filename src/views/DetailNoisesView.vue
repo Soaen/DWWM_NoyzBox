@@ -101,6 +101,7 @@ const playSound = (noise) =>{
 .affichage {
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 20%;
