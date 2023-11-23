@@ -98,14 +98,18 @@ const playSound = (noise) =>{
     }
 }
 
+.boucle{
+    width: 20%;
+}
+
 .affichage {
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 20%;
-    margin-right:20% ;
-    
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 80%; 
+    margin: auto;
+    margin-top: 100px;
 }
 
 .nomcate {

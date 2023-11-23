@@ -13,8 +13,8 @@ const fetchData = () => {
   router.push('/search/name')
 }
 
-const placeholderText = ref(''); // Pour stocker le texte du placeholder
-const cursorSpan = '|'; // Curseur
+const placeholderText = ref(''); 
+const cursorSpan = '|'; 
 let isCursorVisible = true; // État de visibilité du curseur
 
 const phrases = ["Applaudissements", "Cri", "Fred", "Rire", "Bip"];
@@ -35,15 +35,15 @@ const updatePlaceholder = () => {
   
   if (!isDeleting && currentLetterIndex === currentPhrase.length) {
     isDeleting = true;
-    setTimeout(() => isCursorVisible = false, 1000); // Cache le curseur avant d'effacer
-    setTimeout(updatePlaceholder, 1000); // Attend avant de commencer à effacer
+    setTimeout(() => isCursorVisible = false, 1000); 
+    setTimeout(updatePlaceholder, 1000); 
   } else if (isDeleting && currentLetterIndex === 0) {
     isDeleting = false;
-    isCursorVisible = true; // Affiche le curseur pour la prochaine frappe
+    isCursorVisible = true; 
     currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-    setTimeout(updatePlaceholder, 500); // Attend avant de commencer le prochain mot
+    setTimeout(updatePlaceholder, 500); 
   } else {
-    setTimeout(updatePlaceholder, isDeleting ? 30 : 100); // Vitesse de frappe / d'effacement
+    setTimeout(updatePlaceholder, isDeleting ? 30 : 100); 
   }
 };
 
