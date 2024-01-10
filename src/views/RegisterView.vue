@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import router from '../router/index';
-import bcrypt from 'bcryptjs';
 import Footer from "../components/Footer.vue";
 
 const url = import.meta.env.VITE_APP_HOST
@@ -18,13 +17,10 @@ let userPasswordValid = ref(true);
 let userConfirmPasswordValid = ref(true);
 let userEmailValid = ref(true);
 
-let cryptSalt = 10;
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 let addDatas = async ()=>{
-    const salt = await bcrypt.genSalt(cryptSalt);
-    const hash = await bcrypt.hash(userPassword.value, salt);
     
     if (
       userPseudo.value.length < 5 ||
@@ -38,7 +34,6 @@ let addDatas = async ()=>{
     userEmailValid.value = emailRegex.test(userEmail.value);
     return; // Empêche l'envoi des données si l'une des validations échoue
   }
-
 
   if (userPseudo.value.length < 5) {
   userPseudoValid.value = false;
@@ -70,8 +65,7 @@ if (!userPseudoValid.value || !userPasswordValid.value || !userConfirmPasswordVa
     try {
     const data = {
         pseudo: userPseudo.value,
-        password: hash,
-        saltHash: cryptSalt,
+        password: userPassword.value,
         email: userEmail.value,
         picture: '',
         role: 'USER',

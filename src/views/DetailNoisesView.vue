@@ -98,15 +98,18 @@ const playSound = (noise) =>{
     }
 }
 
+.boucle{
+    width: 20%;
+}
+
 .affichage {
 
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 20%;
-    margin-right:20% ;
-    
+    max-width: 80%; 
+    margin: auto;
+    margin-top: 100px;
 }
 
 .nomcate {
@@ -116,6 +119,21 @@ const playSound = (noise) =>{
     justify-content: center;
     color: rgb(255, 27, 141);
    
+}
+
+@media screen and (max-width: 1200px) {
+    .affichage{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        .boucle{
+            width: 30%;
+            p{
+                text-align: center;
+            }
+        }
+    }
 }
 </style>
 

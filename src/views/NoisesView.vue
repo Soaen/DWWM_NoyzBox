@@ -151,7 +151,6 @@ const playSound = (noise) => {
      flex-wrap: wrap;
      margin-top: 100px;
 
-
  }
 
  .noscategories {
@@ -289,6 +288,18 @@ const playSound = (noise) => {
      justify-content: center;
      align-items: center;
      flex-direction: row;
+
+ }
+
+ @media screen and (max-width: 1200px) {
+
+    .last-add, .catephoto{
+        display: flex;
+        flex-wrap: wrap;
+        .boucle{
+            width: 33%;
+        }
+    }
 
  }
 </style>
