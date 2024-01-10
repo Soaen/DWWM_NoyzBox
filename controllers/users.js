@@ -1,5 +1,6 @@
 const UsersModel = require("../models/users");
 var sanitize = require('mongo-sanitize');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
     getAll(req, res){
@@ -8,10 +9,27 @@ module.exports = {
         });
     },
     
-    create(req,res){
+    async create(req,res){
         const user = new UsersModel({...req.body});
+        
+        let cryptSalt = 10;
+        const salt = await bcrypt.genSalt(cryptSalt);
+        const hash = await bcrypt.hash(user.password, salt);
 
-        user.save().then(() => {
+
+        const data = new UsersModel({
+            pseudo: user.pseudo,
+            password: hash,
+            email: user.email,
+            picture: user.picture,
+            role: user.role,
+            favoris: user.favoris,
+            created_at: user.created_at,
+            last_modified: user.last_modified,
+        });
+
+
+        data.save().then(() => {
             res.send({
                 response: `Création de l'utilisateur ${user.pseudo} effectuée avec succès`
             });
