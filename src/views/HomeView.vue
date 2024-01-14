@@ -63,7 +63,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Header />
+  <Header/>
 
   <main>
     <div class="title-animation-container">
