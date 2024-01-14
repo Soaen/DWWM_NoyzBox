@@ -23,6 +23,7 @@ let cryptSalt = 10;
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 let addDatas = async ()=>{
+
     const salt = await bcrypt.genSalt(cryptSalt);
     const hash = await bcrypt.hash(userPassword.value, salt);
     
@@ -142,7 +143,6 @@ if (!userPseudoValid.value || !userPasswordValid.value || !userConfirmPasswordVa
                         <p v-if="!userEmailValid">Les mots de passent doivent être égaux !</p>
                     </div>
 
-                
                 </div>
 
             </div>

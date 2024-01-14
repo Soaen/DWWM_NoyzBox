@@ -21,7 +21,7 @@ const scrollToSection = (e) => {
     <div class="about-container">
         <img src="@/assets/images/cat.png" alt="" class="img-bang">
 
-        <div>
+        <div class="text-container">
 
             <h1>NoyzBox, c’est quoi ?</h1>
 
@@ -148,6 +148,21 @@ const scrollToSection = (e) => {
             font-family: 'Poppins',Verdana, Geneva, Tahoma, sans-serif;
         }
     }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .about-container{
+        flex-direction: column;
+        .text-container{
+        margin-top: 50px;
+        }
+    }
+    .text-container-about{
+        width: 80%;
+        margin: auto;
+    }
+
 }
 
 

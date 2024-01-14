@@ -17,9 +17,6 @@ module.exports = {
         // Récupérer le chemin du fichier téléchargé
 
         const filePath = req.file.path;
-       
-
-        // Exemple avec un modèle fictif
           
         const audioInstance = new NoisesModel({ 
             path: filePath,
