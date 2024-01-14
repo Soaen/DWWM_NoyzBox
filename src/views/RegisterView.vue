@@ -135,7 +135,7 @@ if (!userPseudoValid.value || !userPasswordValid.value || !userConfirmPasswordVa
                         <input type="email" name="email" id="email" v-model="userEmail" class="form-input" placeholder="Email">
                         <p v-if="!userEmailValid">Les mots de passent doivent être égaux !</p>
                     </div>
-
+   
                 </div>
 
             </div>

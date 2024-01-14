@@ -80,7 +80,7 @@ const playSound = (noise) => {
                 <div class="catephoto">
                     
                     <RouterLink :to="'/detailnoises?category=' + categories.name" v-for="(categories, index) in Datacate"
-                        v-show="!Showall && index < 8" class="boucle"> {{ categories.name }} </RouterLink>
+                        v-show="!Showall && index < 8" class="boucle"> {{ categories.name }} <span class="form"> </span></RouterLink>
                     <div v-if="index < 8">
                         <span class="form"> </span>
                         <p> {{ categories.name }}</p>
@@ -162,7 +162,7 @@ const playSound = (noise) => {
 
  .form {
      display: block;
-     background-color: rgb(161, 240, 240);
+     background-color: rgb(16, 240, 240);
      border-radius: 200px;
      width: 80px;
      height: 80px;
@@ -191,7 +191,7 @@ const playSound = (noise) => {
      width: 25%;
      font-size: 20px;
      margin-top: 30px;
-
+    
 
 
 
@@ -206,7 +206,7 @@ const playSound = (noise) => {
  a {
      text-decoration: none;
      margin-top: 20px;
-     color: blueviolet;
+     color: white;
  }
 
 
