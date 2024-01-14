@@ -15,7 +15,8 @@ const fetchData = () => {
 
 const placeholderText = ref(''); 
 const cursorSpan = '|'; 
-let isCursorVisible = true; // État de visibilité du curseur
+const isCursorVisible = ref(true) // État de visibilité du curseur
+//let isCursorVisible = true; 
 
 const phrases = ["Applaudissements", "Cri", "Fred", "Rire", "Bip"];
 let currentPhraseIndex = 0;
@@ -24,7 +25,7 @@ let isDeleting = false;
 
 const updatePlaceholder = () => {
   const currentPhrase = phrases[currentPhraseIndex];
-  const cursorChar = cursorSpan; // Toujours afficher le curseur
+  const cursorChar = isCursorVisible.value ? cursorSpan : ''; // Toujours afficher le curseur
   if (isDeleting) {
     currentLetterIndex--;
   } else {
@@ -35,11 +36,11 @@ const updatePlaceholder = () => {
   
   if (!isDeleting && currentLetterIndex === currentPhrase.length) {
     isDeleting = true;
-    setTimeout(() => isCursorVisible = false, 1000); 
+    setTimeout(() => isCursorVisible.value = false, 1000); 
     setTimeout(updatePlaceholder, 1000); 
   } else if (isDeleting && currentLetterIndex === 0) {
     isDeleting = false;
-    isCursorVisible = true; 
+    isCursorVisible.value = true; 
     currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
     setTimeout(updatePlaceholder, 500); 
   } else {
@@ -49,8 +50,8 @@ const updatePlaceholder = () => {
 
 // Gérer le clignotement du curseur
 const blinkCursor = () => {
-  isCursorVisible = !isCursorVisible;
-  setTimeout(blinkCursor, 500); 
+  isCursorVisible.value = !isCursorVisible.value;
+  setTimeout(blinkCursor, 300); 
 };
 
 onMounted(() => {

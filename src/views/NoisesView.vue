@@ -76,13 +76,16 @@ const playSound = (noise) => {
                 <p class="noscategories">
                     Catégories
                 </p>
+               
                 <div class="catephoto">
+                    
                     <RouterLink :to="'/detailnoises?category=' + categories.name" v-for="(categories, index) in Datacate"
-                        v-show="!Showall && index < 8" class="boucle"> 
-                        <span class="form"></span>
-
-                         <p class="cate-name">{{ categories.name }} </p>
-                    </RouterLink>
+                        v-show="!Showall && index < 8" class="boucle"> {{ categories.name }} </RouterLink>
+                    <div v-if="index < 8">
+                        <span class="form"> </span>
+                        <p> {{ categories.name }}</p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,7 +151,6 @@ const playSound = (noise) => {
      flex-wrap: wrap;
      margin-top: 100px;
 
-
  }
 
  .noscategories {
@@ -160,15 +162,14 @@ const playSound = (noise) => {
 
  .form {
      display: block;
-     background-color: rgb(16, 143, 143);
+     background-color: rgb(161, 240, 240);
      border-radius: 200px;
      width: 80px;
      height: 80px;
      display: flex;
      flex-direction: row;
 
-
-         box-shadow: 5px 5px 0px rgb(7, 64, 64);
+     box-shadow: 5px 5px 0px rgb(7, 64, 64);
          transition: all 0.3s ease;
 
          &:hover {
@@ -205,6 +206,7 @@ const playSound = (noise) => {
  a {
      text-decoration: none;
      margin-top: 20px;
+     color: blueviolet;
  }
 
 
@@ -286,6 +288,18 @@ const playSound = (noise) => {
      justify-content: center;
      align-items: center;
      flex-direction: row;
+
+ }
+
+ @media screen and (max-width: 1200px) {
+
+    .last-add, .catephoto{
+        display: flex;
+        flex-wrap: wrap;
+        .boucle{
+            width: 33%;
+        }
+    }
 
  }
 </style>

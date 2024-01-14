@@ -120,5 +120,20 @@ const playSound = (noise) =>{
     color: rgb(255, 27, 141);
    
 }
+
+@media screen and (max-width: 1200px) {
+    .affichage{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        .boucle{
+            width: 30%;
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
 </style>
 
